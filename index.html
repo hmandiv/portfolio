@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HR Mandiv — Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <h1>HR Mandiv</h1>
+        <p>Software Developer · Building clean, fast, accessible web apps</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content">
+        <section id="about">
+            <h2>About</h2>
+            <p>One or two crisp sentences about who you are, what you do, and what you enjoy building.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <article>
+                <h3>Project One</h3>
+                <p>Short description of the problem, stack, and outcome.</p>
+                <p><a href="#">Live</a> · <a href="#">Code</a></p>
+            </article>
+            <article>
+                <h3>Project Two</h3>
+                <p>What you built, why it matters, and your role.</p>
+                <p><a href="#">Live</a> · <a href="#">Code</a></p>
+            </article>
+            <article>
+                <h3>Project Three</h3>
+                <p>Focus on results: speed, accessibility, or business impact.</p>
+                <p><a href="#">Live</a> · <a href="#">Code</a></p>
+            </article>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Best way to reach you. Consider adding an email link and a few social profiles.</p>
+            <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

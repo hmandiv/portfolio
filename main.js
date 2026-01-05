@@ -12,7 +12,7 @@ const DATA = {
     role: "Software Developer (Full-Stack)",
     tagline: "Building clean, fast, accessible web apps.",
     subtitle:
-      "Software Developer with 3+ years of professional experience building production APIs, microservices, and modern front-end applications. Strong background in C#, React, and Node.js, with hands-on Algorand payment integrations. Research-based developer pursuing a Master’s in Digital Humanities, focused on software-driven research and web-based systems.",
+      "Software Developer with 3+ years of professional experience building and maintaining production APIs, front-end systems, and end-to-end features. Currently a research-based developer pursuing a Master’s in Digital Humanities.",
     location: "Ontario, Canada",
     focus: "Front-end + APIs + Web3 integrations",
     strengths: "Clean UI • Reliable APIs • Performance • Collaboration",
@@ -174,7 +174,7 @@ const DATA = {
       location: "New York, USA",
       bullets: [
         "Developing research-driven software projects as part of a Master’s program in Digital Humanities.",
-        "Applying software engineering principles to data-driven research, digital archives, and interactive web-based tools.",
+        "Applying production-grade software engineering practices (domain modeling, separation of concerns, testable logic) to data-driven research and interactive web tools.",
         "Combining front-end development, data modeling, and computational methods for humanities-focused research questions.",
       ],
       tech: [

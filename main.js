@@ -102,10 +102,19 @@ const DATA = {
       ctas: [
         {
           label: "Live",
-          href: "https://algoadoptairdrop.vercel.app",
+          href: "https://aaa-app-prod.vercel.app",
           kind: "primary",
         },
-        { label: "Code", href: "https://github.com/hmandiv", kind: "ghost" },
+        {
+          label: "Code front end",
+          href: "https://github.com/hmandiv/aaa",
+          kind: "ghost",
+        },
+        {
+          label: "Code back end",
+          href: "https://github.com/hmandiv/aaa-api",
+          kind: "ghost",
+        },
       ],
       caseStudy: {
         problem:

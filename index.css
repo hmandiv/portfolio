@@ -1079,3 +1079,196 @@ pre {
     margin: 0.5rem 0 0;
     line-height: 1.65;
 }
+
+/* =========================
+   Case Study Dialog (theme-safe)
+   ========================= */
+.dialog {
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    /* ✅ was var(--card) */
+    color: var(--text);
+    width: min(920px, calc(100vw - 2rem));
+    max-height: min(82vh, 760px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+    overflow: auto;
+}
+
+.dialog::backdrop {
+    background: rgba(0, 0, 0, .6);
+}
+
+/* inner shell */
+.dialog-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* header stays readable */
+.dialog-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.25rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(to bottom,
+            color-mix(in srgb, var(--surface) 92%, transparent),
+            transparent);
+}
+
+.dialog-title {
+    margin: 0;
+    font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.dialog-subtitle {
+    margin: 0.35rem 0 0;
+    color: var(--muted);
+    line-height: 1.5;
+    max-width: 70ch;
+}
+
+/* close button */
+.dialog-close {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+.dialog-close span {
+    font-size: 26px;
+    line-height: 1;
+    transform: translateY(-1px);
+}
+
+.dialog-close:hover {
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    border-color: color-mix(in srgb, var(--border) 70%, var(--text) 10%);
+}
+
+.dialog-close:active {
+    transform: scale(0.98);
+}
+
+.dialog-close:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    outline-offset: 2px;
+}
+
+/* body scroll area */
+.dialog-body {
+    padding: 1.1rem 1.25rem 1.25rem;
+    overflow: auto;
+}
+
+/* sections */
+.dialog-section+.dialog-section {
+    margin-top: 1.15rem;
+}
+
+.dialog-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    color: var(--text);
+}
+
+/* ✅ theme-safe readable text */
+.dialog-section p {
+    margin: 0;
+    color: color-mix(in srgb, var(--text) 86%, transparent);
+    line-height: 1.65;
+    max-width: 75ch;
+}
+
+/* lists */
+.dialog-list {
+    margin: 0.35rem 0 0;
+    padding-left: 1.1rem;
+}
+
+.dialog-list li {
+    margin: 0.3rem 0;
+    color: color-mix(in srgb, var(--text) 86%, transparent);
+    line-height: 1.6;
+}
+
+/* code block */
+.dialog-code {
+    margin: 0.5rem 0 0;
+    padding: 0.9rem 1rem;
+    background: color-mix(in srgb, var(--bg) 55%, var(--surface) 45%);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: auto;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text);
+    max-width: 100%;
+}
+
+/* actions */
+.dialog-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+/* =========================
+   Dialog Scrollbar Styling (theme-safe)
+   ========================= */
+
+/* WebKit */
+.dialog::-webkit-scrollbar,
+.dialog-body::-webkit-scrollbar,
+.dialog-code::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.dialog::-webkit-scrollbar-track,
+.dialog-body::-webkit-scrollbar-track,
+.dialog-code::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dialog::-webkit-scrollbar-thumb,
+.dialog-body::-webkit-scrollbar-thumb,
+.dialog-code::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--text) 22%, transparent);
+    border-radius: 999px;
+    border: 2px solid color-mix(in srgb, var(--surface) 55%, transparent);
+}
+
+.dialog::-webkit-scrollbar-thumb:hover,
+.dialog-body::-webkit-scrollbar-thumb:hover,
+.dialog-code::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--text) 30%, transparent);
+}
+
+/* Firefox */
+.dialog,
+.dialog-body,
+.dialog-code {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--text) 28%, transparent) transparent;
+}

@@ -1,32 +1,5 @@
-/* =========================================================
-   HR Mandiv — Portfolio Script
-   Goals:
-   - Data-driven content (edit ONE object: DATA)
-   - Accessible nav + active section highlighting
-   - Dark mode toggle w/ localStorage
-   - Projects: manual featured + GitHub public API repos
-   - Graceful fallback on rate limit / fetch failures
-   - Subtle reveals; respects prefers-reduced-motion
-   ========================================================= */
-
 document.documentElement.classList.remove("no-js");
 
-/* ----------------------------
-   1) EDIT CONTENT HERE (DATA)
-   ----------------------------
-
-   ✅ How to add a new project:
-   - Add an object to DATA.featuredProjects (recommended for best presentation)
-   - OR rely on auto-loaded GitHub repos
-
-   ✅ How to add experience:
-   - Add a new object to DATA.experience
-   - Keep bullets concise and impact-focused (results + scope + tech)
-
-   ✅ How to add education:
-   - Add a new object to DATA.education
-
-*/
 const DATA = {
   person: {
     name: "HR Mandiv",
@@ -43,7 +16,6 @@ const DATA = {
     links: [
       { label: "GitHub", href: "https://github.com/hmandiv" },
       { label: "Referral App", href: "https://algoadoptairdrop.vercel.app" },
-      // { label: "LinkedIn", href: "https://www.linkedin.com/in/your-handle/" },
       // { label: "Resume (PDF)", href: "./resume.pdf" },
     ],
     heroBadges: [
@@ -134,7 +106,7 @@ const DATA = {
           href: "https://algoadoptairdrop.vercel.app",
           kind: "primary",
         },
-        { label: "Code", href: "https://github.com/hmandiv", kind: "ghost" }, // replace with exact repo link if you want
+        { label: "Code", href: "https://github.com/hmandiv", kind: "ghost" },
       ],
       highlights: [
         "Aggregated DeFi token data using Promise.all",

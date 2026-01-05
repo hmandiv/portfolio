@@ -617,6 +617,19 @@ pre {
     margin-top: 2px;
 }
 
+.case-study h4 {
+    margin: 10px 0 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.case-study p,
+.case-study ul {
+    margin: 0 0 8px;
+}
+
+
 /* Timeline */
 .timeline {
     list-style: none;

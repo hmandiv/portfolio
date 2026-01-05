@@ -85,20 +85,9 @@ const DATA = {
 
   featuredProjects: [
     {
-      title: "Simple Gaming Platforms (React + Node.js + Algorand)",
-      description:
-        "Multiple lightweight web games with in-app Algorand blockchain payments, wallet integration, and real-time score tracking.",
-      tags: ["React", "Node.js", "Algorand", "Wallet Integration"],
-      highlights: [
-        "Algorand payments + wallet flow",
-        "Authentication + user flows",
-        "Responsive UI + game interactions",
-      ],
-    },
-    {
       title: "Full-Stack Referral App (React + Express + Firebase + Algorand)",
       description:
-        "A full referral platform with a 5-level system, wallet + email auth, portfolio dashboard, and blockchain payment verification via a Node/Express API.",
+        "A full referral platform with wallet/email onboarding, portfolio dashboards, and on-chain payment verification.",
       tags: ["React", "Express", "Firebase", "Algorand", "APIs"],
       ctas: [
         {
@@ -108,11 +97,49 @@ const DATA = {
         },
         { label: "Code", href: "https://github.com/hmandiv", kind: "ghost" },
       ],
-      highlights: [
-        "Aggregated DeFi token data using Promise.all",
-        "Wallet balances + portfolio visualization",
-        "Atomic transactions + batching for secure operations",
+      caseStudy: {
+        problem:
+          "Users needed a secure way to onboard via email or crypto wallet, track multi-level referrals, and verify on-chain payments while viewing real-time portfolio and DeFi token data.",
+        solution:
+          "Designed and built a full-stack platform using React for UI and Node.js/Express for backend services. Firebase handled authentication and real-time data, while Algorand atomic transactions ensured secure payment verification. External DeFi APIs were aggregated using Promise.all for performance.",
+        impact: [
+          "Enabled a 5-level referral system with real-time updates",
+          "Delivered a portfolio dashboard showing wallet balances and token allocations",
+          "Improved API response times via parallelized requests",
+          "Provided secure, verifiable blockchain payments using atomic transactions",
+        ],
+      },
+    },
+
+    {
+      title: "Habit Tracker (TypeScript, Local-First Architecture)",
+      description:
+        "A fast, offline-first habit tracker focused on correct streak logic and clean domain modeling.",
+      tags: ["TypeScript", "Local Storage", "Architecture"],
+      ctas: [
+        {
+          label: "Live",
+          href: "#",
+          kind: "primary",
+        },
+        {
+          label: "Code",
+          href: "https://github.com/hmandiv/habit-tracker",
+          kind: "primary",
+        },
       ],
+      caseStudy: {
+        problem:
+          "Many habit trackers are slow, over-engineered, or depend on unnecessary backend services for simple daily tracking.",
+        solution:
+          "Built a local-first habit tracker in TypeScript with a clear domain model separating habits, check-ins, and derived streak calculations. Core logic was implemented as pure functions to ensure predictability and testability.",
+        impact: [
+          "Achieved instant load times with no backend dependency",
+          "Implemented reliable streak calculations using deterministic logic",
+          "Created a codebase structured for easy testing and future extension",
+          "Reinforced best practices in domain modeling and separation of concerns",
+        ],
+      },
     },
   ],
 
@@ -196,7 +223,7 @@ const DATA = {
     pinTopicsAsTags: true,
 
     // NEW: exclude certain repos from showing up
-    excludeNames: ["ecommerce-project"],
+    excludeNames: ["ecommerce-project", "habit-tracker"],
   },
 };
 
@@ -548,13 +575,14 @@ function normalizeProject(p) {
     tags: Array.isArray(p.tags) ? p.tags : [],
     ctas: Array.isArray(p.ctas) ? p.ctas : [],
     highlights: Array.isArray(p.highlights) ? p.highlights : [],
+    caseStudy: p.caseStudy || null, // ✅ ADD THIS
     source: p.source || "manual", // manual | github
     meta: p.meta || {},
   };
 }
 
-function projectCard(project) {
-  const p = normalizeProject(project);
+function projectCard(p) {
+  // p is already normalized in renderProjects()
 
   const tags = el(
     "div",
@@ -594,14 +622,41 @@ function projectCard(project) {
       ])
     : el("div", { class: "project-meta" }, []);
 
-  const highlights = p.highlights?.length
-    ? el(
-        "ul",
-        { class: "bullets small" },
-        p.highlights.slice(0, 3).map((h) => el("li", { text: h }))
-      )
+  //   const highlights = p.highlights?.length
+  //     ? el(
+  //         "ul",
+  //         { class: "bullets small" },
+  //         p.highlights.slice(0, 3).map((h) => el("li", { text: h }))
+  //       )
+  //     : null;
+
+  const caseStudy = p.caseStudy
+    ? el("div", { class: "case-study" }, [
+        el("h4", { text: "Problem" }),
+        el("p", { class: "muted small", text: p.caseStudy.problem }),
+
+        el("h4", { text: "Solution" }),
+        el("p", { class: "muted small", text: p.caseStudy.solution }),
+
+        el("h4", { text: "Impact" }, []),
+        el(
+          "ul",
+          { class: "bullets small" },
+          p.caseStudy.impact.map((i) => el("li", { text: i }))
+        ),
+      ])
     : null;
 
+  //   return el("article", { class: "card project-card", role: "listitem" }, [
+  //     el("div", { class: "project-top" }, [
+  //       el("h3", { class: "project-title", text: p.title }),
+  //       el("p", { class: "project-desc", text: p.description }),
+  //       meta,
+  //     ]),
+  //     tags,
+  //     highlights || document.createTextNode(""),
+  //     actions,
+  //   ]);
   return el("article", { class: "card project-card", role: "listitem" }, [
     el("div", { class: "project-top" }, [
       el("h3", { class: "project-title", text: p.title }),
@@ -609,7 +664,7 @@ function projectCard(project) {
       meta,
     ]),
     tags,
-    highlights || document.createTextNode(""),
+    caseStudy || document.createTextNode(""),
     actions,
   ]);
 }
@@ -713,6 +768,11 @@ function githubRepoToProject(repo) {
   if (repo.language && !tags.includes(repo.language))
     tags.unshift(repo.language);
 
+  const updated = repo.updated_at ? new Date(repo.updated_at) : null;
+  const updatedLabel = updated
+    ? updated.toLocaleDateString(undefined, { year: "numeric", month: "short" })
+    : null;
+
   return {
     title: repo.name,
     description: repo.description || "Public GitHub repository.",
@@ -724,12 +784,32 @@ function githubRepoToProject(repo) {
       forks: repo.forks_count,
     },
     ctas: [
-      { label: "Code", href: repo.html_url, kind: "primary" },
       repo.homepage
-        ? { label: "Live", href: repo.homepage, kind: "ghost" }
+        ? { label: "Live", href: repo.homepage, kind: "primary" }
         : null,
+      {
+        label: "Code",
+        href: repo.html_url,
+        kind: repo.homepage ? "ghost" : "primary",
+      },
     ].filter(Boolean),
-    highlights: [],
+
+    caseStudy: {
+      problem:
+        "A public repository showcasing implementation work and iteration over time.",
+      solution: `Built using ${
+        repo.language || "multiple technologies"
+      } and maintained as an evolving codebase.`,
+      impact: [
+        typeof repo.stargazers_count === "number"
+          ? `Stars: ${repo.stargazers_count}`
+          : null,
+        typeof repo.forks_count === "number"
+          ? `Forks: ${repo.forks_count}`
+          : null,
+        updatedLabel ? `Last updated: ${updatedLabel}` : null,
+      ].filter(Boolean),
+    },
   };
 }
 

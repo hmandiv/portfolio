@@ -1,64 +1,271 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HR Mandiv — Portfolio</title>
+    <meta name="description"
+        content="HR Mandiv — Software Developer building clean, fast, accessible web apps. Portfolio, projects, and experience." />
+
+    <!-- Performance-friendly font stack (no external font downloads) -->
+    <link rel="preload" href="index.css" as="style" />
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Theme color helps mobile browser UI (updated by JS on toggle) -->
+    <meta name="theme-color" content="#0b1220" />
 </head>
 
 <body>
-    <header>
-        <h1>HR Mandiv</h1>
-        <p>Software Developer · Building clean, fast, accessible web apps</p>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Skip link for keyboard/screen readers -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a class="brand" href="#top" aria-label="Go to top">
+                <span class="brand-mark" aria-hidden="true">HR</span>
+                <span class="brand-text">
+                    <span class="brand-name">HR Mandiv</span>
+                    <span class="brand-role">Software Developer</span>
+                </span>
+            </a>
+
+            <nav class="site-nav" aria-label="Primary">
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span aria-hidden="true">☰</span>
+                </button>
+
+                <ul id="nav-links" class="nav-links">
+                    <!-- Active highlighting is handled by main.js -->
+                    <li><a class="nav-link" href="#about">About</a></li>
+                    <li><a class="nav-link" href="#skills">Skills</a></li>
+                    <li><a class="nav-link" href="#projects">Projects</a></li>
+                    <li><a class="nav-link" href="#experience">Experience</a></li>
+                    <li><a class="nav-link" href="#education">Education</a></li>
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode"
+                    title="Toggle dark mode">
+                    <span class="icon" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <main id="content">
-        <section id="about">
-            <h2>About</h2>
-            <p>One or two crisp sentences about who you are, what you do, and what you enjoy building.</p>
+    <main id="main" class="site-main" role="main">
+        <!-- HERO -->
+        <section id="top" class="section hero" aria-label="Hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow" id="heroEyebrow">Available for roles • Front-end / Full-stack</p>
+                    <h1 class="hero-title" id="heroTitle">
+                        Building clean, fast, accessible web apps.
+                    </h1>
+                    <p class="hero-subtitle" id="heroSubtitle">
+                        I’m HR Mandiv — a software developer focused on thoughtful UI, reliable logic,
+                        and production-ready code.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a class="btn primary" href="#projects">View Projects</a>
+                        <a class="btn" id="resumeBtn" href="#contact">Contact Me</a>
+                        <a class="btn ghost" id="githubBtn" href="https://github.com/hmandiv" target="_blank"
+                            rel="noreferrer">
+                            GitHub
+                        </a>
+                    </div>
+
+                    <ul class="hero-badges" id="heroBadges" aria-label="Highlights">
+                        <!-- Filled by JS -->
+                    </ul>
+                </div>
+
+                <aside class="hero-card" aria-label="Quick info">
+                    <div class="card">
+                        <h2 class="card-title">Quick Info</h2>
+                        <dl class="meta">
+                            <div>
+                                <dt>Location</dt>
+                                <dd id="metaLocation">New York / Toronto</dd>
+                            </div>
+                            <div>
+                                <dt>Focus</dt>
+                                <dd id="metaFocus">React, TypeScript, APIs, UI systems</dd>
+                            </div>
+                            <div>
+                                <dt>Strengths</dt>
+                                <dd id="metaStrengths">Clean architecture • Testing • Performance</dd>
+                            </div>
+                        </dl>
+
+                        <div class="card-actions">
+                            <a class="btn small" href="#experience">Experience</a>
+                            <a class="btn small ghost" href="#skills">Skills</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <article>
-                <h3>Project One</h3>
-                <p>Short description of the problem, stack, and outcome.</p>
-                <p><a href="#">Live</a> · <a href="#">Code</a></p>
-            </article>
-            <article>
-                <h3>Project Two</h3>
-                <p>What you built, why it matters, and your role.</p>
-                <p><a href="#">Live</a> · <a href="#">Code</a></p>
-            </article>
-            <article>
-                <h3>Project Three</h3>
-                <p>Focus on results: speed, accessibility, or business impact.</p>
-                <p><a href="#">Live</a> · <a href="#">Code</a></p>
-            </article>
+        <!-- ABOUT -->
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="about-title">About</h2>
+                    <p class="section-subtitle" id="aboutSubtitle">
+                        A short, clear summary of what you build and what you’re aiming for.
+                    </p>
+                </div>
+
+                <div class="two-col">
+                    <div class="prose" id="aboutContent">
+                        <!-- Filled by JS -->
+                    </div>
+
+                    <div class="card callout" id="aboutCallout">
+                        <h3 class="card-title">What I care about</h3>
+                        <ul class="checklist" id="aboutChecklist">
+                            <!-- Filled by JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Best way to reach you. Consider adding an email link and a few social profiles.</p>
-            <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+        <!-- SKILLS -->
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="skills-title">Skills</h2>
+                    <p class="section-subtitle">Tools I use to ship fast, maintainable products.</p>
+                </div>
+
+                <div class="skills-grid" id="skillsGrid" role="list">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section" aria-labelledby="projects-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="projects-title">Projects</h2>
+                    <p class="section-subtitle">
+                        Selected work + public repos (auto-loaded from GitHub).
+                    </p>
+                </div>
+
+                <div class="projects-toolbar">
+                    <div class="toolbar-left">
+                        <label class="field">
+                            <span class="field-label">Search</span>
+                            <input id="projectSearch" class="input" type="search" placeholder="Search projects…"
+                                autocomplete="off" />
+                        </label>
+
+                        <label class="field">
+                            <span class="field-label">Tag</span>
+                            <select id="projectTagFilter" class="select">
+                                <option value="all">All</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="toolbar-right" aria-label="Project source">
+                        <span id="githubStatus" class="status-pill" role="status" aria-live="polite">
+                            Loading GitHub repos…
+                        </span>
+                    </div>
+                </div>
+
+                <div id="projectsGrid" class="cards-grid" role="list">
+                    <!-- Filled by JS -->
+                </div>
+
+                <div class="muted small" id="githubNote">
+                    <!-- Filled by JS (rate limit fallback note, etc.) -->
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section" aria-labelledby="exp-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="exp-title">Experience</h2>
+                    <p class="section-subtitle">What I’ve built and shipped in real environments.</p>
+                </div>
+
+                <ol class="timeline" id="experienceList">
+                    <!-- Filled by JS -->
+                </ol>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education" class="section" aria-labelledby="edu-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="edu-title">Education</h2>
+                    <p class="section-subtitle">Foundations and ongoing learning.</p>
+                </div>
+
+                <div class="cards-grid" id="educationGrid" role="list">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="contact-title">Contact</h2>
+                    <p class="section-subtitle">Fastest way to reach me.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="card">
+                        <h3 class="card-title">Let’s talk</h3>
+                        <p class="muted" id="contactBlurb">
+                            Email is best. Include a quick summary of the role / project and timeline.
+                        </p>
+
+                        <div class="contact-actions" id="contactActions">
+                            <!-- Filled by JS -->
+                        </div>
+
+                        <p class="muted small">
+                            Prefer not to use email? Add LinkedIn / X / Calendly in <code>main.js</code>.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Notes</h3>
+                        <ul class="bullets" id="contactNotes">
+                            <!-- Filled by JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+            <p class="muted">
+                © <span id="year"></span> <span id="footerName">HR Mandiv</span>. All rights reserved.
+            </p>
+            <a class="muted small" href="#top">Back to top ↑</a>
+        </div>
     </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script src="main.js" defer></script>
 </body>
 
 </html>

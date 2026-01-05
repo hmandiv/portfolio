@@ -1,23 +1,25 @@
 document.documentElement.classList.remove("no-js");
 
+/* =========================================================
+   0) DATA — EDIT THIS ONLY
+   =========================================================
+   ✅ Add projects/experience/education here.
+   ✅ Featured projects show first; GitHub repos auto-load after.
+*/
 const DATA = {
   person: {
     name: "HR Mandiv",
     role: "Software Developer (Full-Stack)",
     tagline: "Building clean, fast, accessible web apps.",
     subtitle:
-      "Software Developer with 3+ years of professional experience building production APIs, microservices, and modern front-end applications. Currently a research-based developer pursuing a Master’s in Digital Humanities.",
+      "Software Developer with 3+ years of professional experience building production APIs, microservices, and modern front-end applications. Strong background in C#, React, and Node.js, with hands-on Algorand payment integrations. Research-based developer pursuing a Master’s in Digital Humanities, focused on software-driven research and web-based systems.",
     location: "Ontario, Canada",
     focus: "Front-end + APIs + Web3 integrations",
     strengths: "Clean UI • Reliable APIs • Performance • Collaboration",
     githubUsername: "hmandiv",
     email: "mandivcei@gmail.com",
     phone: "929-623-5476",
-    links: [
-      { label: "GitHub", href: "https://github.com/hmandiv" },
-      { label: "Referral App", href: "https://algoadoptairdrop.vercel.app" },
-      // { label: "Resume (PDF)", href: "./resume.pdf" },
-    ],
+    links: [{ label: "GitHub", href: "https://github.com/hmandiv" }],
     heroBadges: [
       "C# + SQL APIs",
       "React UI",
@@ -30,65 +32,73 @@ const DATA = {
     subtitle:
       "I build robust APIs and polished front-end experiences — and I’m focused on roles where quality and shipping matter.",
     paragraphs: [
-      "I’m a detail-oriented software developer with 3+ years of professional full-stack experience. I’ve built and maintained APIs/microservices in C# with SQL Server, and delivered responsive Angular front-ends that streamline real business workflows.",
+      "I’m a detail-oriented software developer with 3+ years of professional full-stack experience. I’ve built and maintained APIs/microservices in C# with SQL Server, and delivered responsive Angular front-ends that support real business workflows.",
       "I’m also hands-on with modern JavaScript/TypeScript stacks (React + Node/Express) and have built projects integrating Algorand payments, wallet flows (Pera Wallet), and atomic transaction patterns.",
-      "My strengths are clean implementation, strong collaboration, and improving system performance — from optimizing queries to structuring front-end components for maintainability.",
+      "My strengths are clean implementation, strong collaboration, and improving system performance — from query optimization to structured, maintainable UI components.",
     ],
     checklist: [
       "Robust REST APIs + microservices (C#, Node/Express)",
-      "Modern front-end UI (Angular, React) with strong UX",
-      "Performance improvements (SQL/query optimization, parallel API calls)",
+      "Modern front-end UI (React) with strong UX",
+      "Performance improvements (SQL optimization, parallel API calls)",
       "Blockchain integrations (Algorand, wallet flows, atomic transactions)",
     ],
   },
 
   skills: [
+    // ✅ Skills tuned for both React-heavy and Full-stack scans (ordering matters)
     {
-      group: "Languages & Frameworks",
+      group: "Front-End",
       items: [
-        "C#",
-        "JavaScript",
+        "React",
         "TypeScript",
+        "JavaScript",
+        "Component architecture",
+        "Accessibility",
+        "Performance",
+      ],
+    },
+    {
+      group: "Full-Stack",
+      items: [
         "Node.js",
         "Express",
-        "React",
-        "Angular",
+        "C#",
+        "REST APIs",
+        "Microservices",
+        "Auth flows",
       ],
     },
+    { group: "Data", items: ["SQL Server", "SQL", "Firebase (NoSQL)"] },
     {
       group: "Blockchain",
+      items: ["Algorand", "Atomic transactions", "Pera Wallet integration"],
+    },
+    {
+      group: "Engineering Practices",
       items: [
-        "Algorand",
-        "Atomic Transactions",
-        "Wallet Integrations (Pera Wallet)",
+        "Domain modeling (DDD-lite): entities, commands, selectors",
+        "Functional core / imperative shell (pure logic first)",
+        "Immutability + reducer-style state transitions",
+        "Derived state + single source of truth",
+        "Testing pyramid (unit/integration/E2E)",
+        "User-centric + accessibility-first testing",
+        "Performance patterns (parallel I/O with Promise.all)",
+        "Code review and maintainable architecture",
       ],
     },
     {
-      group: "Data",
-      items: ["Microsoft SQL Server", "SQL", "Firebase (NoSQL)"],
-    },
-    {
-      group: "Tools & Platforms",
-      items: ["Git", "Docker", "Postman", "Visual Studio", "VS Code"],
-    },
-    {
-      group: "Engineering",
-      items: [
-        "REST API Design",
-        "Microservices",
-        "Auth (Firebase Auth)",
-        "UX/UI mindset",
-        "Promise.all patterns",
-      ],
+      group: "Tools",
+      items: ["Git", "Docker", "Postman", "VS Code", "Visual Studio"],
     },
   ],
 
   featuredProjects: [
+    // ✅ MINI CASE STUDY #1
     {
-      title: "Full-Stack Referral App (React + Express + Firebase + Algorand)",
+      title: "Full-Stack Referral App",
       description:
-        "A full referral platform with wallet/email onboarding, portfolio dashboards, and on-chain payment verification.",
-      tags: ["React", "Express", "Firebase", "Algorand", "APIs"],
+        "Secure email/wallet onboarding, 5-level referrals, portfolio dashboard, DeFi API aggregation, and on-chain payment verification (Algorand).",
+      tags: ["React", "Express", "Firebase", "Algorand", "Performance"],
       ctas: [
         {
           label: "Live",
@@ -99,29 +109,34 @@ const DATA = {
       ],
       caseStudy: {
         problem:
-          "Users needed a secure way to onboard via email or crypto wallet, track multi-level referrals, and verify on-chain payments while viewing real-time portfolio and DeFi token data.",
+          "Users needed a secure way to onboard via email or crypto wallet, track multi-level referrals, and verify on-chain payments—while also viewing portfolio balances and DeFi token data in real time. Existing solutions were fragmented or unreliable.",
         solution:
-          "Designed and built a full-stack platform using React for UI and Node.js/Express for backend services. Firebase handled authentication and real-time data, while Algorand atomic transactions ensured secure payment verification. External DeFi APIs were aggregated using Promise.all for performance.",
+          "Built a full-stack platform using React for UI and Node.js/Express for backend services. Firebase handled authentication + real-time data. Algorand atomic transactions verified payments. Aggregated external DeFi APIs using Promise.all for parallel requests to reduce latency.",
         impact: [
           "Enabled a 5-level referral system with real-time updates",
-          "Delivered a portfolio dashboard showing wallet balances and token allocations",
-          "Improved API response times via parallelized requests",
-          "Provided secure, verifiable blockchain payments using atomic transactions",
+          "Delivered a portfolio dashboard (balances, allocations, totals)",
+          "Improved API responsiveness via parallelized external requests",
+          "Provided secure, verifiable payments using Algorand atomic transactions",
         ],
+        interviewScript: {
+          // ✅ “Tell me about a project” script
+          tellMeAbout:
+            "I built a full-stack referral platform that supports both email and crypto-wallet onboarding, a multi-level referral system, and verifiable on-chain payments. The key challenge was making the app feel fast and trustworthy while integrating multiple external APIs and blockchain verification. I designed a React UI, built a Node/Express API, used Firebase for auth + realtime updates, and verified payments using Algorand atomic transactions. For performance, I aggregated DeFi data using Promise.all to parallelize calls and reduce overall latency. The result was a production-style platform with real-time referral tracking, a portfolio dashboard, and secure payment verification.",
+          tradeoffs:
+            "Main tradeoff: real-time UX vs complexity. Firebase simplified realtime updates, while the backend enforced verification + integrity for wallet and payment flows.",
+          whatIdImprove:
+            "Add stronger observability (structured logs + metrics), broaden test coverage, and implement server-side caching for third-party API data.",
+        },
       },
     },
 
+    // ✅ MINI CASE STUDY #2
     {
-      title: "Habit Tracker (TypeScript, Local-First Architecture)",
+      title: "Habit Tracker (Local-first TypeScript)",
       description:
-        "A fast, offline-first habit tracker focused on correct streak logic and clean domain modeling.",
-      tags: ["TypeScript", "Local Storage", "Architecture"],
+        "Fast, offline-first habit tracker with correct streak logic, clean domain model, and testable pure functions.",
+      tags: ["TypeScript", "Architecture", "Local Storage", "Testing-friendly"],
       ctas: [
-        {
-          label: "Live",
-          href: "#",
-          kind: "primary",
-        },
         {
           label: "Code",
           href: "https://github.com/hmandiv/habit-tracker",
@@ -130,15 +145,23 @@ const DATA = {
       ],
       caseStudy: {
         problem:
-          "Many habit trackers are slow, over-engineered, or depend on unnecessary backend services for simple daily tracking.",
+          "Many habit trackers are slow, over-engineered, or rely on unnecessary backend services for simple daily tracking. I wanted instant UX and correct streak logic without network dependency.",
         solution:
-          "Built a local-first habit tracker in TypeScript with a clear domain model separating habits, check-ins, and derived streak calculations. Core logic was implemented as pure functions to ensure predictability and testability.",
+          "Built a local-first habit tracker using TypeScript with a domain model separating habits, check-ins, and derived streak calculations. Implemented core behavior as pure functions so logic is predictable, testable, and easy to extend. Persisted state locally for instant load.",
         impact: [
-          "Achieved instant load times with no backend dependency",
-          "Implemented reliable streak calculations using deterministic logic",
-          "Created a codebase structured for easy testing and future extension",
-          "Reinforced best practices in domain modeling and separation of concerns",
+          "Instant load times with no backend dependency",
+          "Reliable streak calculations using deterministic logic",
+          "Codebase designed for testing + easy future extension",
+          "Strong separation of concerns (domain model vs UI)",
         ],
+        interviewScript: {
+          tellMeAbout:
+            "I built a local-first habit tracker focused on speed and correctness. The main problem I saw in many habit apps is unnecessary backend complexity and buggy streak logic. I designed a domain model that separates habits from check-ins and computes streaks through deterministic pure functions. That makes the logic easy to test and prevents UI state from becoming the source of truth. Because everything persists locally, the app loads instantly and works offline. It’s a small project, but it demonstrates clean architecture, predictable behavior, and engineering maturity beyond just UI work.",
+          tradeoffs:
+            "Tradeoff: local-first simplicity vs multi-device sync. I chose local-first for speed and reliability; sync could be added later without changing core logic.",
+          whatIdImprove:
+            "Add optional export/import or cloud sync, and strengthen automated test coverage for edge-case date/streak scenarios.",
+        },
       },
     },
   ],
@@ -147,13 +170,12 @@ const DATA = {
     {
       role: "Research-Based Developer (Graduate Studies)",
       company: "CUNY Graduate Center",
-      dates: "2026 — Present",
+      dates: "2024 — Present",
       location: "New York, USA",
       bullets: [
         "Developing research-driven software projects as part of a Master’s program in Digital Humanities.",
         "Applying software engineering principles to data-driven research, digital archives, and interactive web-based tools.",
-        "Combining front-end development, data modeling, and computational methods to explore humanities-focused research questions.",
-        "Continuing hands-on development while strengthening analytical, documentation, and research skills.",
+        "Combining front-end development, data modeling, and computational methods for humanities-focused research questions.",
       ],
       tech: [
         "JavaScript",
@@ -169,11 +191,11 @@ const DATA = {
       dates: "Jan 2020 — Oct 2023",
       location: "Ontario, Canada",
       bullets: [
-        "Designed and implemented production APIs and microservices using C# and Microsoft SQL Server to support core business workflows.",
-        "Built modern, responsive Angular front-end interfaces that improved usability and reduced friction in internal and customer-facing tools.",
-        "Integrated RESTful APIs with front-end components, ensuring reliable data flow and consistent user interactions across features.",
-        "Optimized SQL queries and stored procedures, improving data retrieval performance and reducing response times in high-traffic areas.",
-        "Collaborated closely with cross-functional teams (product, QA, other developers) and participated in code reviews to maintain code quality and best practices.",
+        "Designed and implemented production APIs and microservices using C# and SQL Server supporting core business workflows.",
+        "Built modern, responsive Angular interfaces to streamline internal and customer-facing tools.",
+        "Integrated REST APIs with front-end components ensuring reliable data flow and consistent behavior.",
+        "Optimized SQL queries and stored procedures to improve retrieval speed and reduce response times.",
+        "Collaborated cross-functionally (product, QA, devs) and participated in code reviews to uphold standards.",
       ],
       tech: [
         "C#",
@@ -188,9 +210,9 @@ const DATA = {
 
   education: [
     {
-      title: "Master’s Studies in Digital Humanities (Research-Based)",
+      title: "Master’s in Digital Humanities (Research-Based)",
       org: "CUNY Graduate Center",
-      dates: "2024 — Present",
+      dates: "In progress",
       notes: [
         "Research-focused program combining software development, data analysis, and humanities-driven computation.",
       ],
@@ -200,16 +222,16 @@ const DATA = {
       org: "Algoma University",
       dates: "Completed",
       notes: [
-        "Relevant coursework: Data Structures & Algorithms, Database Systems, Software Engineering, Web Development, Blockchain Fundamentals.",
+        "Coursework: DSA, Databases, Software Engineering, Web Dev, Blockchain Fundamentals.",
       ],
     },
   ],
 
   contact: {
     blurb:
-      "Email is best. If you’re reaching out about a role, include the title, tech stack, and timeline.",
+      "Email is best. If you’re reaching out about a role, include the title, stack, and timeline.",
     notes: [
-      "Open to front-end and full-stack roles.",
+      "Open to React-heavy and full-stack roles.",
       "Strong in API + UI integration and performance-minded delivery.",
       "Comfortable with web3/Algorand wallet flows in production-style apps.",
     ],
@@ -222,29 +244,34 @@ const DATA = {
     excludePrivate: true,
     pinTopicsAsTags: true,
 
-    // NEW: exclude certain repos from showing up
-    excludeNames: ["ecommerce-project", "habit-tracker"],
+    // ✅ Exclude repos you don’t want to show
+    excludeNames: ["ecommerce-project", "habit-tracker"], // add more names here
   },
 };
 
-/* ----------------------------
-   2) DOM Helpers
-   ---------------------------- */
+/* =========================================================
+   1) DOM Helpers
+   ========================================================= */
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
 function el(tag, attrs = {}, children = []) {
   const node = document.createElement(tag);
+
   for (const [k, v] of Object.entries(attrs)) {
     if (k === "class") node.className = v;
     else if (k === "text") node.textContent = v;
-    else if (k.startsWith("on") && typeof v === "function")
-      node.addEventListener(k.slice(2), v);
-    else node.setAttribute(k, v);
+    else if (k === "html") node.innerHTML = v;
+    else if (k.startsWith("on") && typeof v === "function") {
+      // FIX: "onClick" -> "click" (lowercase)
+      const evt = k.slice(2).toLowerCase();
+      node.addEventListener(evt, v);
+    } else {
+      node.setAttribute(k, v);
+    }
   }
-  for (const child of children) {
-    node.append(child);
-  }
+
+  children.forEach((c) => node.append(c));
   return node;
 }
 
@@ -254,9 +281,9 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-/* ----------------------------
-   3) Theme Toggle (localStorage)
-   ---------------------------- */
+/* =========================================================
+   2) Theme Toggle (localStorage)
+   ========================================================= */
 const THEME_KEY = "portfolio_theme";
 
 function getPreferredTheme() {
@@ -270,7 +297,6 @@ function getPreferredTheme() {
 
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
-  // Update meta theme-color for mobile browser chrome
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta)
     meta.setAttribute("content", theme === "dark" ? "#0b1220" : "#f7f8fb");
@@ -289,9 +315,9 @@ function initTheme() {
   });
 }
 
-/* ----------------------------
-   4) Mobile Nav Toggle
-   ---------------------------- */
+/* =========================================================
+   3) Mobile Nav Toggle
+   ========================================================= */
 function initNavToggle() {
   const btn = $(".nav-toggle");
   const list = $("#nav-links");
@@ -302,7 +328,6 @@ function initNavToggle() {
     btn.setAttribute("aria-expanded", String(open));
   });
 
-  // Close after clicking a link (mobile)
   $$(".nav-link", list).forEach((a) => {
     a.addEventListener("click", () => {
       if (list.classList.contains("open")) {
@@ -313,21 +338,22 @@ function initNavToggle() {
   });
 }
 
-/* ----------------------------
-   5) Smooth Scrolling + Offset
-   (keeps sticky header from covering titles)
-   ---------------------------- */
+/* =========================================================
+   4) Smooth scroll offset (sticky header)
+   ========================================================= */
 function initSmoothScrollOffset() {
   const headerHeight = () => $(".site-header")?.offsetHeight || 0;
 
-  $$(".nav-link, .brand, a[href^='#']").forEach((a) => {
+  $$("a[href^='#']").forEach((a) => {
     a.addEventListener("click", (e) => {
       const href = a.getAttribute("href");
-      if (!href || !href.startsWith("#")) return;
+      if (!href || href === "#") return;
+      if (!href.startsWith("#")) return;
+
       const target = document.querySelector(href);
       if (!target) return;
 
-      // Let skip link behave normally
+      // Skip link should behave normally
       if (a.classList.contains("skip-link")) return;
 
       e.preventDefault();
@@ -342,9 +368,9 @@ function initSmoothScrollOffset() {
   });
 }
 
-/* ----------------------------
-   6) Active Section Highlighting
-   ---------------------------- */
+/* =========================================================
+   5) Active section highlighting
+   ========================================================= */
 function initActiveNav() {
   const links = $$(".nav-link");
   const sections = links
@@ -353,33 +379,28 @@ function initActiveNav() {
 
   const obs = new IntersectionObserver(
     (entries) => {
-      // Pick the entry that is most visible
       const visible = entries
         .filter((e) => e.isIntersecting)
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
       if (!visible) return;
-
       const id = "#" + visible.target.id;
+
       links.forEach((a) => {
         const active = a.getAttribute("href") === id;
         if (active) a.setAttribute("aria-current", "page");
         else a.removeAttribute("aria-current");
       });
     },
-    {
-      root: null,
-      threshold: [0.2, 0.35, 0.5, 0.65],
-      rootMargin: "-30% 0px -55% 0px",
-    }
+    { threshold: [0.2, 0.35, 0.5, 0.65], rootMargin: "-30% 0px -55% 0px" }
   );
 
   sections.forEach((s) => obs.observe(s));
 }
 
-/* ----------------------------
-   7) Reveal Animations (respect reduced motion)
-   ---------------------------- */
+/* =========================================================
+   6) Reveal animations
+   ========================================================= */
 function initReveals() {
   const reduce =
     window.matchMedia &&
@@ -387,7 +408,7 @@ function initReveals() {
   if (reduce) return;
 
   const nodes = $$(
-    ".section .card, .section .section-head, .hero-copy, .hero-card, .timeline-item"
+    ".section .card, .section .section-head, .hero-copy, .hero-card, .timeline li"
   );
   nodes.forEach((n) => n.classList.add("reveal"));
 
@@ -399,33 +420,262 @@ function initReveals() {
         obs.unobserve(e.target);
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.12 }
   );
 
   nodes.forEach((n) => obs.observe(n));
 }
 
-/* ----------------------------
-   8) Render: Hero + About + Skills + Experience + Education + Contact
-   ---------------------------- */
+/* =========================================================
+   7) Case Study Modal
+   ========================================================= */
+function normalizeProject(p) {
+  return {
+    title: p.title || "Untitled",
+    description: p.description || "",
+    tags: Array.isArray(p.tags) ? p.tags : [],
+    ctas: Array.isArray(p.ctas) ? p.ctas : [],
+    highlights: Array.isArray(p.highlights) ? p.highlights : [],
+    caseStudy: p.caseStudy || null, // ✅ THIS WAS THE COMMON “NOT SHOWING” BUG
+    source: p.source || "manual",
+    meta: p.meta || {},
+  };
+}
+
+function buildInterviewText(p) {
+  const cs = p.caseStudy;
+  if (!cs?.interviewScript) return "";
+
+  const s = cs.interviewScript;
+  const parts = [
+    `Answer: Tell me about this project`,
+    `--------------------------------`,
+    s.tellMeAbout || "",
+    "",
+    s.tradeoffs ? `Tradeoffs:\n${s.tradeoffs}` : "",
+    "",
+    s.whatIdImprove ? `What I’d improve next:\n${s.whatIdImprove}` : "",
+  ].filter(Boolean);
+
+  return parts.join("\n");
+}
+
+function openCaseStudyModal(project) {
+  const dlg = $("#caseStudyDialog");
+  if (!dlg) return;
+
+  const p = normalizeProject(project);
+
+  $("#caseStudyTitle").textContent = p.title || "Case Study";
+  $("#caseStudyDesc").textContent = p.description || "";
+  $("#caseStudyProblem").textContent = p.caseStudy?.problem || "";
+  $("#caseStudySolution").textContent = p.caseStudy?.solution || "";
+  $("#caseStudyScript").textContent = p.caseStudy?.script || "";
+
+  const impact = $("#caseStudyImpact");
+  impact.innerHTML = "";
+  (p.caseStudy?.impact || []).forEach((i) =>
+    impact.append(el("li", { text: i }))
+  );
+
+  const interview = $("#caseStudyScript");
+  interview.textContent = buildInterviewText(p);
+
+  const ctas = $("#caseStudyCtas");
+  ctas.innerHTML = "";
+  (p.ctas || []).slice(0, 4).forEach((c) => {
+    const kind =
+      c.kind === "primary"
+        ? "btn primary"
+        : c.kind === "ghost"
+        ? "btn ghost"
+        : "btn";
+    const isExternal = /^https?:\/\//.test(c.href);
+    ctas.append(
+      el("a", {
+        class: kind,
+        href: c.href,
+        text: c.label,
+        ...(isExternal ? { target: "_blank", rel: "noreferrer" } : {}),
+      })
+    );
+  });
+
+  if (typeof dlg.showModal === "function") dlg.showModal();
+  else
+    alert(
+      `${p.title}\n\nProblem:\n${p.caseStudy?.problem}\n\nSolution:\n${p.caseStudy?.solution}`
+    );
+}
+
+function initCaseStudyDialog() {
+  const dlg = $("#caseStudyDialog");
+  if (!dlg) return;
+
+  // Close via X button
+  $("#caseStudyClose")?.addEventListener("click", () => dlg.close());
+
+  // Close when clicking backdrop (outside dialog content)
+  dlg.addEventListener("click", (e) => {
+    if (e.target === dlg) dlg.close();
+  });
+
+  $("#copyInterviewBtn")?.addEventListener("click", async () => {
+    const text = $("#caseStudyInterview")?.textContent || "";
+    if (!text.trim()) return;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      $("#copyInterviewBtn").textContent = "Copied!";
+      setTimeout(() => ($("#copyInterviewBtn").textContent = "Copy"), 900);
+    } catch {
+      // Fallback
+      window.prompt("Copy this:", text);
+    }
+  });
+}
+
+/* =========================================================
+   8) Resume PDF (Print -> Save as PDF)
+   ========================================================= */
+function buildResumePrintHtml() {
+  const p = DATA.person;
+
+  const skills = (DATA.skills || [])
+    .map(
+      (g) =>
+        `<div><strong>${escapeHtml(g.group)}:</strong> ${escapeHtml(
+          (g.items || []).join(", ")
+        )}</div>`
+    )
+    .join("");
+
+  const exp = (DATA.experience || [])
+    .map((x) => {
+      const bullets = (x.bullets || [])
+        .map((b) => `<li>${escapeHtml(b)}</li>`)
+        .join("");
+      const tech =
+        (x.tech || []).length > 0
+          ? `<div class="rp-muted"><strong>Tech:</strong> ${escapeHtml(
+              x.tech.join(", ")
+            )}</div>`
+          : "";
+      return `
+        <div class="rp-section">
+          <h3>${escapeHtml(x.role)} — ${escapeHtml(x.company)}</h3>
+          <div class="rp-muted">${escapeHtml(x.dates)} • ${escapeHtml(
+        x.location || ""
+      )}</div>
+          ${tech}
+          <ul>${bullets}</ul>
+        </div>
+      `;
+    })
+    .join("");
+
+  const edu = (DATA.education || [])
+    .map((e) => {
+      const notes = (e.notes || [])
+        .map((n) => `<div class="rp-muted">${escapeHtml(n)}</div>`)
+        .join("");
+      return `
+        <div class="rp-section">
+          <h3>${escapeHtml(e.title)}</h3>
+          <div class="rp-muted">${escapeHtml(e.org)} • ${escapeHtml(
+        e.dates
+      )}</div>
+          ${notes}
+        </div>
+      `;
+    })
+    .join("");
+
+  return `
+    <h1>${escapeHtml(p.name)}</h1>
+    <div class="rp-muted">${escapeHtml(p.location)} • ${escapeHtml(
+    p.phone || ""
+  )} • ${escapeHtml(p.email || "")}</div>
+    <div class="rp-muted">${escapeHtml(
+      `https://github.com/${p.githubUsername}`
+    )}</div>
+
+    <div class="rp-section">
+      <h2>Summary</h2>
+      <div>${escapeHtml(p.subtitle || "")}</div>
+    </div>
+
+    <div class="rp-section">
+      <h2>Skills</h2>
+      ${skills}
+    </div>
+
+    <div class="rp-section">
+      <h2>Experience</h2>
+      ${exp}
+    </div>
+
+    <div class="rp-section">
+      <h2>Education</h2>
+      ${edu}
+    </div>
+  `;
+}
+
+function downloadResumePdf() {
+  const container = $("#resumePrint");
+  if (!container) return;
+
+  container.hidden = false;
+  container.innerHTML = buildResumePrintHtml();
+  document.body.classList.add("print-resume");
+  window.print();
+
+  setTimeout(() => {
+    document.body.classList.remove("print-resume");
+    container.hidden = true;
+    container.innerHTML = "";
+  }, 500);
+}
+
+/* =========================================================
+   9) Render static sections
+   ========================================================= */
 function renderStaticSections() {
-  // Year + name
+  // Footer year/name
   $("#year").textContent = String(new Date().getFullYear());
   $("#footerName").textContent = DATA.person.name;
+  $("#brandName").textContent = DATA.person.name;
 
-  // Hero copy
-  $("#heroTitle").textContent = DATA.person.tagline;
+  // Hero
   $("#heroSubtitle").textContent = DATA.person.subtitle;
   $("#metaLocation").textContent = DATA.person.location;
   $("#metaFocus").textContent = DATA.person.focus;
   $("#metaStrengths").textContent = DATA.person.strengths;
 
-  // Hero badges
-  const heroBadges = $("#heroBadges");
-  heroBadges.innerHTML = "";
-  DATA.person.heroBadges.forEach((b) => {
-    heroBadges.append(el("li", { class: "badge", text: b }));
-  });
+  $("#metaPhone").textContent = DATA.person.phone || "";
+  const email = DATA.person.email || "";
+  const emailA = $("#metaEmail");
+  emailA.textContent = email;
+  emailA.href = `mailto:${email}`;
+
+  const gh = `https://github.com/${DATA.person.githubUsername}`;
+  const ghA = $("#metaGithub");
+  ghA.textContent = gh;
+  ghA.href = gh;
+
+  const githubBtn = $("#githubBtn");
+  if (githubBtn) githubBtn.href = gh;
+
+  // Resume button
+  $("#resumeBtn")?.addEventListener("click", downloadResumePdf);
+
+  // Badges
+  const badges = $("#heroBadges");
+  badges.innerHTML = "";
+  DATA.person.heroBadges.forEach((b) =>
+    badges.append(el("li", { class: "badge", text: b }))
+  );
 
   // About
   $("#aboutSubtitle").textContent = DATA.about.subtitle;
@@ -435,9 +685,7 @@ function renderStaticSections() {
 
   const checklist = $("#aboutChecklist");
   checklist.innerHTML = "";
-  DATA.about.checklist.forEach((item) => {
-    checklist.append(el("li", { text: item }));
-  });
+  DATA.about.checklist.forEach((i) => checklist.append(el("li", { text: i })));
 
   // Skills
   const skillsGrid = $("#skillsGrid");
@@ -449,7 +697,7 @@ function renderStaticSections() {
       group.items.map((t) => el("span", { class: "tag", text: t }))
     );
     skillsGrid.append(
-      el("div", { class: "card skill-card", role: "listitem" }, [
+      el("div", { class: "card", role: "listitem" }, [
         el("h3", { text: group.group }),
         tags,
       ])
@@ -462,19 +710,11 @@ function renderStaticSections() {
   DATA.experience.forEach((x) => {
     const bullets = el(
       "ul",
-      { class: "timeline-bullets" },
+      { class: "bullets" },
       x.bullets.map((b) => el("li", { text: b }))
     );
-
-    const meta = el("div", { class: "project-meta" }, [
-      el("span", { text: x.location || "" }),
-      x.tech?.length
-        ? el("span", { class: "dot", text: x.tech.join(" · ") })
-        : document.createTextNode(""),
-    ]);
-
     expList.append(
-      el("li", { class: "card timeline-item" }, [
+      el("li", { class: "card" }, [
         el("div", { class: "timeline-top" }, [
           el("div", {}, [
             el("h3", { class: "timeline-role", text: x.role }),
@@ -482,7 +722,12 @@ function renderStaticSections() {
           ]),
           el("div", { class: "timeline-dates", text: x.dates }),
         ]),
-        meta,
+        el("div", {
+          class: "project-meta",
+          text: `${x.location || ""}${
+            x.tech?.length ? " • " + x.tech.join(" · ") : ""
+          }`,
+        }),
         bullets,
       ])
     );
@@ -506,22 +751,28 @@ function renderStaticSections() {
   // Contact
   $("#contactBlurb").textContent = DATA.contact.blurb;
 
-  const contactActions = $("#contactActions");
-  contactActions.innerHTML = "";
+  const actions = $("#contactActions");
+  actions.innerHTML = "";
 
-  // Email CTA
-  const safeEmail = DATA.person.email || "you@example.com";
-  contactActions.append(
+  actions.append(
     el("a", {
       class: "btn primary",
-      href: `mailto:${safeEmail}`,
+      href: `mailto:${DATA.person.email}`,
       text: "Email me",
+    })
+  );
+  actions.append(
+    el("button", {
+      class: "btn",
+      type: "button",
+      text: "Download Resume (PDF)",
+      onClick: downloadResumePdf,
     })
   );
 
   if (DATA.person.phone) {
     const tel = DATA.person.phone.replace(/[^\d+]/g, "");
-    contactActions.append(
+    actions.append(
       el("a", {
         class: "btn",
         href: `tel:${tel}`,
@@ -530,9 +781,8 @@ function renderStaticSections() {
     );
   }
 
-  // Social/links
-  DATA.person.links.forEach((l) => {
-    contactActions.append(
+  DATA.person.links.forEach((l) =>
+    actions.append(
       el("a", {
         class: "btn ghost",
         href: l.href,
@@ -540,74 +790,24 @@ function renderStaticSections() {
         rel: "noreferrer",
         text: l.label,
       })
-    );
-  });
+    )
+  );
 
   const notes = $("#contactNotes");
   notes.innerHTML = "";
   DATA.contact.notes.forEach((n) => notes.append(el("li", { text: n })));
-
-  // Update GitHub button (hero)
-  const githubBtn = $("#githubBtn");
-  if (githubBtn)
-    githubBtn.href = `https://github.com/${DATA.person.githubUsername}`;
-
-  // Update resume/contact button if you later add a resume link
-  const resumeLink = DATA.person.links.find((x) =>
-    x.label.toLowerCase().includes("resume")
-  )?.href;
-  const resumeBtn = $("#resumeBtn");
-  if (resumeBtn && resumeLink) {
-    resumeBtn.href = resumeLink;
-    resumeBtn.textContent = "Resume";
-    resumeBtn.target = "_blank";
-    resumeBtn.rel = "noreferrer";
-  }
 }
 
-/* ----------------------------
-   9) Projects Rendering (Featured + GitHub)
-   ---------------------------- */
-function normalizeProject(p) {
-  return {
-    title: p.title || "Untitled",
-    description: p.description || "",
-    tags: Array.isArray(p.tags) ? p.tags : [],
-    ctas: Array.isArray(p.ctas) ? p.ctas : [],
-    highlights: Array.isArray(p.highlights) ? p.highlights : [],
-    caseStudy: p.caseStudy || null, // ✅ ADD THIS
-    source: p.source || "manual", // manual | github
-    meta: p.meta || {},
-  };
-}
-
-function projectCard(p) {
-  // p is already normalized in renderProjects()
+/* =========================================================
+   10) Projects rendering (Featured + GitHub)
+   ========================================================= */
+function projectCard(project) {
+  const p = normalizeProject(project);
 
   const tags = el(
     "div",
     { class: "tag-row" },
-    (p.tags || []).slice(0, 6).map((t) => el("span", { class: "tag", text: t }))
-  );
-
-  const actions = el(
-    "div",
-    { class: "project-actions" },
-    (p.ctas || []).slice(0, 3).map((c) => {
-      const kind =
-        c.kind === "primary"
-          ? "btn primary"
-          : c.kind === "ghost"
-          ? "btn ghost"
-          : "btn";
-      const isExternal = /^https?:\/\//.test(c.href);
-      return el("a", {
-        class: kind + " small",
-        href: c.href,
-        text: c.label,
-        ...(isExternal ? { target: "_blank", rel: "noreferrer" } : {}),
-      });
-    })
+    (p.tags || []).slice(0, 8).map((t) => el("span", { class: "tag", text: t }))
   );
 
   const metaParts = [];
@@ -616,55 +816,46 @@ function projectCard(p) {
     if (typeof p.meta.stars === "number") metaParts.push(`★ ${p.meta.stars}`);
     if (typeof p.meta.forks === "number") metaParts.push(`⑂ ${p.meta.forks}`);
   }
+
   const meta = metaParts.length
-    ? el("div", { class: "project-meta" }, [
-        el("span", { text: metaParts.join(" · ") }),
-      ])
-    : el("div", { class: "project-meta" }, []);
+    ? el("div", { class: "project-meta", text: metaParts.join(" · ") })
+    : el("div", { class: "project-meta" });
 
-  //   const highlights = p.highlights?.length
-  //     ? el(
-  //         "ul",
-  //         { class: "bullets small" },
-  //         p.highlights.slice(0, 3).map((h) => el("li", { text: h }))
-  //       )
-  //     : null;
+  const actions = el("div", { class: "project-actions" }, []);
+  (p.ctas || []).slice(0, 3).forEach((c) => {
+    const kind =
+      c.kind === "primary"
+        ? "btn primary"
+        : c.kind === "ghost"
+        ? "btn ghost"
+        : "btn";
+    const isExternal = /^https?:\/\//.test(c.href);
+    actions.append(
+      el("a", {
+        class: kind + " small",
+        href: c.href,
+        text: c.label,
+        ...(isExternal ? { target: "_blank", rel: "noreferrer" } : {}),
+      })
+    );
+  });
 
-  const caseStudy = p.caseStudy
-    ? el("div", { class: "case-study" }, [
-        el("h4", { text: "Problem" }),
-        el("p", { class: "muted small", text: p.caseStudy.problem }),
+  if (p.caseStudy) {
+    actions.append(
+      el("button", {
+        class: "btn ghost small",
+        type: "button",
+        text: "Case Study",
+        onClick: () => openCaseStudyModal(p),
+      })
+    );
+  }
 
-        el("h4", { text: "Solution" }),
-        el("p", { class: "muted small", text: p.caseStudy.solution }),
-
-        el("h4", { text: "Impact" }, []),
-        el(
-          "ul",
-          { class: "bullets small" },
-          p.caseStudy.impact.map((i) => el("li", { text: i }))
-        ),
-      ])
-    : null;
-
-  //   return el("article", { class: "card project-card", role: "listitem" }, [
-  //     el("div", { class: "project-top" }, [
-  //       el("h3", { class: "project-title", text: p.title }),
-  //       el("p", { class: "project-desc", text: p.description }),
-  //       meta,
-  //     ]),
-  //     tags,
-  //     highlights || document.createTextNode(""),
-  //     actions,
-  //   ]);
-  return el("article", { class: "card project-card", role: "listitem" }, [
-    el("div", { class: "project-top" }, [
-      el("h3", { class: "project-title", text: p.title }),
-      el("p", { class: "project-desc", text: p.description }),
-      meta,
-    ]),
+  return el("article", { class: "card", role: "listitem" }, [
+    el("h3", { class: "project-title", text: p.title }),
+    el("p", { class: "project-desc", text: p.description }),
+    meta,
     tags,
-    caseStudy || document.createTextNode(""),
     actions,
   ]);
 }
@@ -675,18 +866,17 @@ function renderProjects(allProjects) {
 
   const normalized = allProjects.map(normalizeProject);
 
-  // Build tag filter options
+  // Tag filter options
   const select = $("#projectTagFilter");
   const tags = new Set();
-  normalized.forEach((p) => p.tags.forEach((t) => tags.add(t)));
-  const sortedTags = Array.from(tags).sort((a, b) => a.localeCompare(b));
+  normalized.forEach((p) => (p.tags || []).forEach((t) => tags.add(t)));
+  const sorted = Array.from(tags).sort((a, b) => a.localeCompare(b));
   select.innerHTML =
     `<option value="all">All</option>` +
-    sortedTags
+    sorted
       .map((t) => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`)
       .join("");
 
-  // Filtering
   const search = $("#projectSearch");
   function applyFilter() {
     const q = (search.value || "").trim().toLowerCase();
@@ -725,9 +915,9 @@ function renderProjects(allProjects) {
   applyFilter();
 }
 
-/* ----------------------------
-   10) GitHub API Loading + Fallback
-   ---------------------------- */
+/* =========================================================
+   11) GitHub API loading + fallback/caching
+   ========================================================= */
 const githubCacheKey = (user) => `gh_repos_cache_${user}`;
 const githubCacheTTLms = 1000 * 60 * 60 * 6; // 6 hours
 
@@ -756,22 +946,13 @@ function writeGithubCache(user, data) {
 }
 
 function githubRepoToProject(repo) {
-  // "topics" requires a preview header in older APIs; nowadays it often works with the standard Accept
   const topics = Array.isArray(repo.topics) ? repo.topics : [];
   const tags = [];
 
-  if (DATA.github.pinTopicsAsTags) {
+  if (DATA.github.pinTopicsAsTags)
     topics.slice(0, 6).forEach((t) => tags.push(t));
-  }
-
-  // Use language if present (and not already in tags)
   if (repo.language && !tags.includes(repo.language))
     tags.unshift(repo.language);
-
-  const updated = repo.updated_at ? new Date(repo.updated_at) : null;
-  const updatedLabel = updated
-    ? updated.toLocaleDateString(undefined, { year: "numeric", month: "short" })
-    : null;
 
   return {
     title: repo.name,
@@ -793,23 +974,6 @@ function githubRepoToProject(repo) {
         kind: repo.homepage ? "ghost" : "primary",
       },
     ].filter(Boolean),
-
-    caseStudy: {
-      problem:
-        "A public repository showcasing implementation work and iteration over time.",
-      solution: `Built using ${
-        repo.language || "multiple technologies"
-      } and maintained as an evolving codebase.`,
-      impact: [
-        typeof repo.stargazers_count === "number"
-          ? `Stars: ${repo.stargazers_count}`
-          : null,
-        typeof repo.forks_count === "number"
-          ? `Forks: ${repo.forks_count}`
-          : null,
-        updatedLabel ? `Last updated: ${updatedLabel}` : null,
-      ].filter(Boolean),
-    },
   };
 }
 
@@ -818,30 +982,20 @@ async function fetchGithubRepos(username) {
     username
   )}/repos?per_page=100&sort=updated`;
   const res = await fetch(url, {
-    headers: {
-      // Include topics when possible (GitHub now often includes them; harmless if ignored)
-      Accept: "application/vnd.github+json",
-    },
+    headers: { Accept: "application/vnd.github+json" },
   });
 
-  // Rate limit / forbidden
   if (res.status === 403) {
-    const remaining = res.headers.get("X-RateLimit-Remaining");
     const reset = res.headers.get("X-RateLimit-Reset");
-    const msg = {
+    throw Object.assign(new Error("rate_limit"), {
       kind: "rate_limit",
-      remaining,
       reset: reset ? new Date(Number(reset) * 1000) : null,
-    };
-    throw Object.assign(new Error("GitHub rate limit / forbidden"), msg);
+    });
   }
 
-  if (!res.ok) {
-    throw new Error(`GitHub API error: ${res.status}`);
-  }
-
+  if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
   const data = await res.json();
-  if (!Array.isArray(data)) throw new Error("Unexpected GitHub response.");
+  if (!Array.isArray(data)) throw new Error("Unexpected GitHub response");
   return data;
 }
 
@@ -849,7 +1003,6 @@ function filterRepos(repos) {
   const excluded = new Set(
     (DATA.github.excludeNames || []).map((n) => n.toLowerCase())
   );
-
   return repos
     .filter((r) => (DATA.github.excludeForks ? !r.fork : true))
     .filter((r) => (DATA.github.excludeArchived ? !r.archived : true))
@@ -859,55 +1012,46 @@ function filterRepos(repos) {
     .slice(0, DATA.github.maxRepos);
 }
 
-function updateGithubStatus(text, tone = "neutral") {
+function updateGithubStatus(text) {
   const pill = $("#githubStatus");
-  if (!pill) return;
-  pill.textContent = text;
-  // Keep it subtle; you can add tone-based styling later if desired
+  if (pill) pill.textContent = text;
 }
 
 function setGithubNote(text) {
   const node = $("#githubNote");
-  if (!node) return;
-  node.textContent = text;
+  if (node) node.textContent = text;
 }
 
 async function loadProjects() {
   const username = DATA.person.githubUsername;
-
-  // Start with featured projects
-  const manual = (DATA.featuredProjects || []).map((p) => ({
+  const featured = (DATA.featuredProjects || []).map((p) => ({
     ...p,
     source: "manual",
   }));
 
-  // Attempt GitHub fetch
   updateGithubStatus("Loading GitHub repos…");
   setGithubNote("");
 
-  // If cache exists, we can render immediately while fetching fresh
+  // Render cached immediately (fast)
   const cached = readGithubCache(username);
-  let ghProjects = [];
-  if (cached) {
-    ghProjects = cached.map(githubRepoToProject);
-    updateGithubStatus("GitHub repos loaded (cached)");
-  }
+  const cachedProjects = cached ? cached.map(githubRepoToProject) : [];
+  if (cachedProjects.length) updateGithubStatus("GitHub repos loaded (cached)");
 
-  // Initial render (manual + cached)
-  renderProjects([...manual, ...ghProjects]);
+  renderProjects([...featured, ...cachedProjects]);
 
   try {
     const repos = await fetchGithubRepos(username);
     const filtered = filterRepos(repos);
     writeGithubCache(username, filtered);
 
-    ghProjects = filtered.map(githubRepoToProject);
     updateGithubStatus("GitHub repos loaded");
-    setGithubNote("Showing projects + most recently updated public repos.");
-    renderProjects([...manual, ...ghProjects]);
+    setGithubNote(
+      "Showing featured projects + most recently updated public repos."
+    );
+    renderProjects([...featured, ...filtered.map(githubRepoToProject)]);
   } catch (err) {
-    // If rate-limited, keep cached if we have it; otherwise show manual only
-    const hasCached = Boolean(cached && cached.length);
+    const hasCached = cachedProjects.length > 0;
+
     if (err?.kind === "rate_limit") {
       updateGithubStatus(
         hasCached ? "GitHub rate-limited (using cached)" : "GitHub rate-limited"
@@ -917,8 +1061,8 @@ async function loadProjects() {
         : "";
       setGithubNote(
         hasCached
-          ? `GitHub API rate limit hit.${resetText} Showing cached repos.`
-          : `GitHub API rate limit hit.${resetText} Showing featured projects only.`
+          ? `GitHub rate limit hit.${resetText} Showing cached repos.`
+          : `GitHub rate limit hit.${resetText} Showing featured projects only.`
       );
     } else {
       updateGithubStatus(
@@ -931,21 +1075,19 @@ async function loadProjects() {
       );
     }
 
-    renderProjects([
-      ...manual,
-      ...(hasCached ? cached.map(githubRepoToProject) : []),
-    ]);
+    renderProjects([...featured, ...(hasCached ? cachedProjects : [])]);
   }
 }
 
-/* ----------------------------
-   11) Boot
-   ---------------------------- */
+/* =========================================================
+   12) Boot
+   ========================================================= */
 function boot() {
   initTheme();
   initNavToggle();
   initSmoothScrollOffset();
   initActiveNav();
+  initCaseStudyDialog();
   renderStaticSections();
   initReveals();
   loadProjects();

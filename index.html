@@ -5,39 +5,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HR Mandiv — Portfolio</title>
-    <meta name="description"
-        content="HR Mandiv — Software Developer building clean, fast, accessible web apps. Portfolio, projects, and experience." />
-
-    <!-- Performance-friendly font stack (no external font downloads) -->
-    <link rel="preload" href="index.css" as="style" />
-    <link rel="stylesheet" href="index.css" />
-
-    <!-- Theme color helps mobile browser UI (updated by JS on toggle) -->
-    <meta name="theme-color" content="#0b1220" />
+    <meta name="description" content="HR Mandiv — Software Developer portfolio." />
+    <meta name="theme-color" content="#f7f8fb" />
+    <link rel="stylesheet" href="./index.css" />
 </head>
 
-<body>
-    <!-- Skip link for keyboard/screen readers -->
-    <a class="skip-link" href="#main">Skip to content</a>
+<body id="top">
+    <a class="skip-link" href="#content">Skip to content</a>
 
     <header class="site-header" role="banner">
         <div class="container header-inner">
             <a class="brand" href="#top" aria-label="Go to top">
-                <span class="brand-mark" aria-hidden="true">HR</span>
-                <span class="brand-text">
-                    <span class="brand-name">HR Mandiv</span>
-                    <span class="brand-role">Software Developer</span>
-                </span>
+                <span class="brand-dot" aria-hidden="true"></span>
+                <span id="brandName">HR Mandiv</span>
             </a>
 
             <nav class="site-nav" aria-label="Primary">
                 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
                     <span class="sr-only">Toggle navigation</span>
-                    <span aria-hidden="true">☰</span>
+                    <span class="nav-toggle-bars" aria-hidden="true"></span>
                 </button>
 
                 <ul id="nav-links" class="nav-links">
-                    <!-- Active highlighting is handled by main.js -->
                     <li><a class="nav-link" href="#about">About</a></li>
                     <li><a class="nav-link" href="#skills">Skills</a></li>
                     <li><a class="nav-link" href="#projects">Projects</a></li>
@@ -45,67 +34,65 @@
                     <li><a class="nav-link" href="#education">Education</a></li>
                     <li><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
-            </nav>
 
-            <div class="header-actions">
-                <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode"
-                    title="Toggle dark mode">
-                    <span class="icon" aria-hidden="true">🌙</span>
+                <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">
+                    <span class="icon" aria-hidden="true">☀️</span>
                 </button>
-            </div>
+            </nav>
         </div>
     </header>
 
-    <main id="main" class="site-main" role="main">
+    <main id="content" class="site-main" role="main">
         <!-- HERO -->
-        <section id="top" class="section hero" aria-label="Hero">
+        <section class="hero section" aria-labelledby="hero-title">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow" id="heroEyebrow">Available for roles • Front-end / Full-stack</p>
-                    <h1 class="hero-title" id="heroTitle">
-                        Building clean, fast, accessible web apps.
-                    </h1>
-                    <p class="hero-subtitle" id="heroSubtitle">
-                        I’m HR Mandiv — a software developer focused on thoughtful UI, reliable logic,
-                        and production-ready code.
+                    <p class="eyebrow" id="heroEyebrow">Software Developer</p>
+                    <h1 id="hero-title" class="hero-title">Building clean, fast, accessible web apps.</h1>
+                    <p id="heroSubtitle" class="hero-subtitle">
+                        Software Developer with 3+ years of professional experience…
                     </p>
 
+                    <ul id="heroBadges" class="badge-row" aria-label="Highlights">
+                        <!-- filled by JS -->
+                    </ul>
+
                     <div class="hero-cta">
-                        <a class="btn primary" href="#projects">View Projects</a>
-                        <a class="btn" id="resumeBtn" href="#contact">Contact Me</a>
-                        <a class="btn ghost" id="githubBtn" href="https://github.com/hmandiv" target="_blank"
-                            rel="noreferrer">
-                            GitHub
-                        </a>
+                        <a id="githubBtn" class="btn primary" href="#" target="_blank" rel="noreferrer">GitHub</a>
+                        <a class="btn ghost" href="#projects">View Projects</a>
+                        <button id="resumeBtn" class="btn" type="button">Download Resume (PDF)</button>
                     </div>
 
-                    <ul class="hero-badges" id="heroBadges" aria-label="Highlights">
-                        <!-- Filled by JS -->
-                    </ul>
+                    <dl class="meta-grid" aria-label="Quick facts">
+                        <div class="meta-item">
+                            <dt class="meta-k">Location</dt>
+                            <dd class="meta-v" id="metaLocation">Ontario, Canada</dd>
+                        </div>
+                        <div class="meta-item">
+                            <dt class="meta-k">Focus</dt>
+                            <dd class="meta-v" id="metaFocus">Front-end + APIs + Web3 integrations</dd>
+                        </div>
+                        <div class="meta-item">
+                            <dt class="meta-k">Strengths</dt>
+                            <dd class="meta-v" id="metaStrengths">Clean UI • Reliable APIs • Performance</dd>
+                        </div>
+                    </dl>
                 </div>
 
-                <aside class="hero-card" aria-label="Quick info">
-                    <div class="card">
-                        <h2 class="card-title">Quick Info</h2>
-                        <dl class="meta">
-                            <div>
-                                <dt>Location</dt>
-                                <dd id="metaLocation">New York / Toronto</dd>
-                            </div>
-                            <div>
-                                <dt>Focus</dt>
-                                <dd id="metaFocus">React, TypeScript, APIs, UI systems</dd>
-                            </div>
-                            <div>
-                                <dt>Strengths</dt>
-                                <dd id="metaStrengths">Clean architecture • Testing • Performance</dd>
-                            </div>
-                        </dl>
+                <aside class="hero-card card" aria-label="Snapshot">
+                    <h2 class="card-title">Snapshot</h2>
+                    <p class="muted" id="snapshotText">
+                        Professional full-stack experience (C# / SQL / Angular), plus modern React/Node projects and
+                        Algorand integrations.
+                    </p>
 
-                        <div class="card-actions">
-                            <a class="btn small" href="#experience">Experience</a>
-                            <a class="btn small ghost" href="#skills">Skills</a>
-                        </div>
+                    <div class="stack">
+                        <div class="stack-row"><span class="stack-k">Phone</span> <span class="stack-v"
+                                id="metaPhone"></span></div>
+                        <div class="stack-row"><span class="stack-k">Email</span> <span class="stack-v"><a
+                                    id="metaEmail" href="#"></a></span></div>
+                        <div class="stack-row"><span class="stack-k">GitHub</span> <span class="stack-v"><a
+                                    id="metaGithub" href="#" target="_blank" rel="noreferrer"></a></span></div>
                     </div>
                 </aside>
             </div>
@@ -113,25 +100,22 @@
 
         <!-- ABOUT -->
         <section id="about" class="section" aria-labelledby="about-title">
-            <div class="container">
-                <div class="section-head">
-                    <h2 id="about-title">About</h2>
-                    <p class="section-subtitle" id="aboutSubtitle">
-                        A short, clear summary of what you build and what you’re aiming for.
-                    </p>
+            <div class="container two-col">
+                <div>
+                    <div class="section-head">
+                        <h2 id="about-title">About</h2>
+                        <p class="section-subtitle" id="aboutSubtitle"></p>
+                    </div>
+                    <div id="aboutContent" class="prose">
+                        <!-- filled by JS -->
+                    </div>
                 </div>
 
-                <div class="two-col">
-                    <div class="prose" id="aboutContent">
-                        <!-- Filled by JS -->
-                    </div>
-
-                    <div class="card callout" id="aboutCallout">
-                        <h3 class="card-title">What I care about</h3>
-                        <ul class="checklist" id="aboutChecklist">
-                            <!-- Filled by JS -->
-                        </ul>
-                    </div>
+                <div class="card">
+                    <h3 class="card-title">What I bring</h3>
+                    <ul id="aboutChecklist" class="bullets">
+                        <!-- filled by JS -->
+                    </ul>
                 </div>
             </div>
         </section>
@@ -141,11 +125,11 @@
             <div class="container">
                 <div class="section-head">
                     <h2 id="skills-title">Skills</h2>
-                    <p class="section-subtitle">Tools I use to ship fast, maintainable products.</p>
+                    <p class="section-subtitle">Tuned for React-heavy + full-stack roles.</p>
                 </div>
 
-                <div class="skills-grid" id="skillsGrid" role="list">
-                    <!-- Filled by JS -->
+                <div id="skillsGrid" class="skills-grid" role="list">
+                    <!-- filled by JS -->
                 </div>
             </div>
         </section>
@@ -155,40 +139,27 @@
             <div class="container">
                 <div class="section-head">
                     <h2 id="projects-title">Projects</h2>
-                    <p class="section-subtitle">
-                        Selected work + public repos (auto-loaded from GitHub).
-                    </p>
+                    <p class="section-subtitle">Featured work + latest public GitHub repos.</p>
                 </div>
 
-                <div class="projects-toolbar">
-                    <div class="toolbar-left">
-                        <label class="field">
-                            <span class="field-label">Search</span>
-                            <input id="projectSearch" class="input" type="search" placeholder="Search projects…"
-                                autocomplete="off" />
-                        </label>
+                <div class="projects-toolbar" role="region" aria-label="Project filters">
+                    <label class="sr-only" for="projectSearch">Search projects</label>
+                    <input id="projectSearch" class="input" type="search" placeholder="Search projects…" />
 
-                        <label class="field">
-                            <span class="field-label">Tag</span>
-                            <select id="projectTagFilter" class="select">
-                                <option value="all">All</option>
-                            </select>
-                        </label>
-                    </div>
+                    <label class="sr-only" for="projectTagFilter">Filter by tag</label>
+                    <select id="projectTagFilter" class="select">
+                        <option value="all">All</option>
+                    </select>
 
-                    <div class="toolbar-right" aria-label="Project source">
-                        <span id="githubStatus" class="status-pill" role="status" aria-live="polite">
-                            Loading GitHub repos…
-                        </span>
+                    <div class="github-pill" aria-live="polite">
+                        <span id="githubStatus">Loading GitHub repos…</span>
                     </div>
                 </div>
+
+                <p id="githubNote" class="muted small" aria-live="polite"></p>
 
                 <div id="projectsGrid" class="cards-grid" role="list">
-                    <!-- Filled by JS -->
-                </div>
-
-                <div class="muted small" id="githubNote">
-                    <!-- Filled by JS (rate limit fallback note, etc.) -->
+                    <!-- filled by JS -->
                 </div>
             </div>
         </section>
@@ -202,7 +173,7 @@
                 </div>
 
                 <ol class="timeline" id="experienceList">
-                    <!-- Filled by JS -->
+                    <!-- filled by JS -->
                 </ol>
             </div>
         </section>
@@ -216,7 +187,7 @@
                 </div>
 
                 <div class="cards-grid" id="educationGrid" role="list">
-                    <!-- Filled by JS -->
+                    <!-- filled by JS -->
                 </div>
             </div>
         </section>
@@ -232,36 +203,81 @@
                 <div class="contact-grid">
                     <div class="card">
                         <h3 class="card-title">Let’s talk</h3>
-                        <p class="muted" id="contactBlurb">
-                            Email is best. Include a quick summary of the role / project and timeline.
-                        </p>
+                        <p class="muted" id="contactBlurb"></p>
 
                         <div class="contact-actions" id="contactActions">
-                            <!-- Filled by JS -->
+                            <!-- filled by JS -->
                         </div>
+
+                        <p class="muted small">
+                            <strong>Tip:</strong> The “Download Resume (PDF)” button opens your browser print dialog —
+                            choose “Save as PDF”.
+                        </p>
                     </div>
 
                     <div class="card">
                         <h3 class="card-title">Notes</h3>
                         <ul class="bullets" id="contactNotes">
-                            <!-- Filled by JS -->
+                            <!-- filled by JS -->
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Hidden print container -->
+        <section id="resumePrint" class="resume-print" hidden aria-hidden="true"></section>
     </main>
 
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-inner">
-            <p class="muted">
-                © <span id="year"></span> <span id="footerName">HR Mandiv</span>. All rights reserved.
-            </p>
+            <p class="muted">© <span id="year"></span> <span id="footerName">HR Mandiv</span>. All rights reserved.</p>
             <a class="muted small" href="#top">Back to top ↑</a>
         </div>
     </footer>
 
-    <script src="main.js" defer></script>
+    <!-- Case Study Modal -->
+    <dialog id="caseStudyDialog" class="dialog">
+        <div class="dialog-shell">
+            <header class="dialog-head">
+                <div class="dialog-titles">
+                    <h2 id="caseStudyTitle" class="dialog-title">Case Study</h2>
+                    <p id="caseStudyDesc" class="dialog-subtitle"></p>
+                </div>
+
+                <button id="caseStudyClose" class="dialog-close" type="button" aria-label="Close case study">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </header>
+
+            <div class="dialog-body">
+                <section class="dialog-section">
+                    <h3>Problem</h3>
+                    <p id="caseStudyProblem"></p>
+                </section>
+
+                <section class="dialog-section">
+                    <h3>Solution</h3>
+                    <p id="caseStudySolution"></p>
+                </section>
+
+                <section class="dialog-section">
+                    <h3>Impact</h3>
+                    <ul id="caseStudyImpact" class="dialog-list"></ul>
+                </section>
+
+                <section class="dialog-section">
+                    <h3>Interview Answer Script</h3>
+                    <pre class="dialog-code"><code id="caseStudyScript"></code></pre>
+                </section>
+
+                <div id="caseStudyCtas" class="dialog-actions"></div>
+            </div>
+        </div>
+    </dialog>
+
+
+    <script src="./main.js" defer></script>
 </body>
 
 </html>

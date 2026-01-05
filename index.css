@@ -562,6 +562,24 @@ pre {
     overflow: clip;
 }
 
+/* --- FIX: prevent stretched cards -> stretched inner rows -> tall buttons --- */
+.cards-grid {
+    align-items: start;
+}
+
+.project-card {
+    align-content: start;
+}
+
+.project-actions {
+    align-items: center;
+}
+
+.project-actions .btn {
+    align-self: flex-start;
+}
+
+
 .project-top {
     display: grid;
     gap: 6px;
@@ -699,6 +717,26 @@ pre {
         transform: none !important;
     }
 }
+
+/* Prevent cards from stretching to the tallest item in the row */
+.cards-grid {
+    align-items: start;
+}
+
+/* Prevent inner grid rows from stretching when the card has extra height */
+.project-card {
+    align-content: start;
+}
+
+/* Extra safety: keep action buttons from stretching tall */
+.project-actions {
+    align-items: center;
+}
+
+.project-actions .btn {
+    align-self: flex-start;
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {

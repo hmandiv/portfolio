@@ -30,147 +30,201 @@ document.documentElement.classList.remove("no-js");
 const DATA = {
   person: {
     name: "HR Mandiv",
-    role: "Software Developer",
+    role: "Software Developer (Full-Stack)",
     tagline: "Building clean, fast, accessible web apps.",
     subtitle:
-      "I ship modern front-end experiences with reliable logic, thoughtful architecture, and performance in mind.",
-    location: "New York / Toronto",
-    focus: "Front-end + full-stack web",
-    strengths: "Clean architecture • Testing • Performance",
+      "Software Developer with 3+ years of professional experience building production APIs, microservices, and modern front-end applications. Currently a research-based developer pursuing a Master’s in Digital Humanities.",
+    location: "Ontario, Canada",
+    focus: "Front-end + APIs + Web3 integrations",
+    strengths: "Clean UI • Reliable APIs • Performance • Collaboration",
     githubUsername: "hmandiv",
-    email: "you@example.com", // <-- CHANGE THIS
+    email: "mandivcei@gmail.com",
+    phone: "929-623-5476",
     links: [
       { label: "GitHub", href: "https://github.com/hmandiv" },
+      { label: "Referral App", href: "https://algoadoptairdrop.vercel.app" },
       // { label: "LinkedIn", href: "https://www.linkedin.com/in/your-handle/" },
-      // { label: "X", href: "https://x.com/your-handle" },
       // { label: "Resume (PDF)", href: "./resume.pdf" },
     ],
     heroBadges: [
-      "Accessible UI",
-      "TypeScript + React",
-      "APIs + Databases",
-      "Testing mindset",
+      "C# + SQL APIs",
+      "Angular + React UI",
+      "Algorand integrations",
+      "Performance-minded",
     ],
   },
 
   about: {
     subtitle:
-      "I build user-focused products with clean code and clear UX — and I’m looking for roles where I can ship and grow.",
+      "I build robust APIs and polished front-end experiences — and I’m focused on roles where quality and shipping matter.",
     paragraphs: [
-      "I’m a software developer with experience building web apps end-to-end: UI, APIs, and data. I care about code quality, accessibility, and performance — the stuff that makes products feel trustworthy.",
-      "I like projects where the requirements are real, the feedback loop is tight, and the result is something people actually use. I’m strongest when I can combine clean UI with solid underlying logic (and tests where it counts).",
-      "Right now I’m focused on sharpening my front-end craft and building portfolio projects that look and behave like production software.",
+      "I’m a detail-oriented software developer with 3+ years of professional full-stack experience. I’ve built and maintained APIs/microservices in C# with SQL Server, and delivered responsive Angular front-ends that streamline real business workflows.",
+      "I’m also hands-on with modern JavaScript/TypeScript stacks (React + Node/Express) and have built projects integrating Algorand payments, wallet flows (Pera Wallet), and atomic transaction patterns.",
+      "My strengths are clean implementation, strong collaboration, and improving system performance — from optimizing queries to structuring front-end components for maintainability.",
     ],
     checklist: [
-      "Responsive, accessible UI (keyboard-first, semantic HTML, focus states)",
-      "Maintainable architecture (data-driven views, clear boundaries)",
-      "Performance basics (fast load, minimal JS, good UX defaults)",
-      "Testing and debugging mindset (reliable changes, fewer regressions)",
+      "Robust REST APIs + microservices (C#, Node/Express)",
+      "Modern front-end UI (Angular, React) with strong UX",
+      "Performance improvements (SQL/query optimization, parallel API calls)",
+      "Blockchain integrations (Algorand, wallet flows, atomic transactions)",
     ],
   },
 
   skills: [
     {
-      group: "Front-end",
+      group: "Languages & Frameworks",
       items: [
-        "HTML",
-        "CSS",
+        "C#",
         "JavaScript",
         "TypeScript",
+        "Node.js",
+        "Express",
         "React",
-        "Accessibility (a11y)",
+        "Angular",
       ],
     },
     {
-      group: "Back-end",
+      group: "Blockchain",
       items: [
-        "Node.js",
-        "Express",
-        "REST APIs",
-        "Auth basics (JWT)",
-        "PostgreSQL / SQL",
+        "Algorand",
+        "Atomic Transactions",
+        "Wallet Integrations (Pera Wallet)",
       ],
+    },
+    {
+      group: "Data",
+      items: ["Microsoft SQL Server", "SQL", "Firebase (NoSQL)"],
+    },
+    {
+      group: "Tools & Platforms",
+      items: ["Git", "Docker", "Postman", "Visual Studio", "VS Code"],
     },
     {
       group: "Engineering",
       items: [
-        "Git/GitHub",
-        "Testing basics",
-        "Performance",
-        "Clean architecture",
-        "CI/CD basics",
+        "REST API Design",
+        "Microservices",
+        "Auth (Firebase Auth)",
+        "UX/UI mindset",
+        "Promise.all patterns",
       ],
     },
   ],
 
   featuredProjects: [
-    // Add your best 2–4 projects here. Keep it employer-friendly: problem → solution → impact.
     {
-      title: "Token Dashboard / DeFi Hub (Algorand)",
+      title: "Simple Gaming Platforms (React + Node.js + Algorand)",
       description:
-        "Token listing + details pages with charts, liquidity data, and wallet integrations. Focus on data correctness and UI polish.",
-      tags: ["React", "TypeScript", "APIs", "Charts"],
+        "Multiple lightweight web games with in-app Algorand blockchain payments, wallet integration, and real-time score tracking.",
+      tags: ["React", "Node.js", "Algorand", "Wallet Integration"],
+      highlights: [
+        "Algorand payments + wallet flow",
+        "Authentication + user flows",
+        "Responsive UI + game interactions",
+      ],
+    },
+    {
+      title: "Full-Stack Referral App (React + Express + Firebase + Algorand)",
+      description:
+        "A full referral platform with a 5-level system, wallet + email auth, portfolio dashboard, and blockchain payment verification via a Node/Express API.",
+      tags: ["React", "Express", "Firebase", "Algorand", "APIs"],
       ctas: [
         {
-          label: "Live Demo",
-          href: "https://algoadoptairdrop.vercel.app/",
+          label: "Live",
+          href: "https://algoadoptairdrop.vercel.app",
           kind: "primary",
         },
+        { label: "Code", href: "https://github.com/hmandiv", kind: "ghost" }, // replace with exact repo link if you want
       ],
       highlights: [
-        "Token stats visualization",
-        "API integration",
-        "Performance-focused UI",
+        "Aggregated DeFi token data using Promise.all",
+        "Wallet balances + portfolio visualization",
+        "Atomic transactions + batching for secure operations",
       ],
     },
   ],
 
   experience: [
-    // Example structure — replace with your real roles.
     {
-      role: "Full-Stack Developer",
-      company: "Your Company",
-      dates: "2021 — 2024",
-      location: "Remote / On-site",
+      role: "Research-Based Developer (Graduate Studies)",
+      company: "CUNY Graduate Center",
+      dates: "2026 — Present",
+      location: "New York, USA",
       bullets: [
-        "Built and maintained customer-facing features with a focus on accessibility and performance.",
-        "Collaborated with product/design to ship iterative improvements with measurable impact.",
-        "Improved reliability by refactoring key flows and adding test coverage where it mattered most.",
+        "Developing research-driven software projects as part of a Master’s program in Digital Humanities.",
+        "Applying software engineering principles to data-driven research, digital archives, and interactive web-based tools.",
+        "Combining front-end development, data modeling, and computational methods to explore humanities-focused research questions.",
+        "Continuing hands-on development while strengthening analytical, documentation, and research skills.",
       ],
-      tech: ["React", "TypeScript", "Node.js", "SQL"],
+      tech: [
+        "JavaScript",
+        "TypeScript",
+        "Web Development",
+        "Data Modeling",
+        "Research Computing",
+      ],
     },
-    // Add more roles here…
+    {
+      role: "Software Developer",
+      company: "LBMX Inc.",
+      dates: "Jan 2020 — Oct 2023",
+      location: "Ontario, Canada",
+      bullets: [
+        "Designed and implemented production APIs and microservices using C# and Microsoft SQL Server to support core business workflows.",
+        "Built modern, responsive Angular front-end interfaces that improved usability and reduced friction in internal and customer-facing tools.",
+        "Integrated RESTful APIs with front-end components, ensuring reliable data flow and consistent user interactions across features.",
+        "Optimized SQL queries and stored procedures, improving data retrieval performance and reducing response times in high-traffic areas.",
+        "Collaborated closely with cross-functional teams (product, QA, other developers) and participated in code reviews to maintain code quality and best practices.",
+      ],
+      tech: [
+        "C#",
+        "SQL Server",
+        "Angular",
+        "REST APIs",
+        "Microservices",
+        "Git",
+      ],
+    },
   ],
 
   education: [
     {
-      title: "B.S. in Computer Science",
-      org: "Your University",
-      dates: "Year — Year",
+      title: "Master’s Studies in Digital Humanities (Research-Based)",
+      org: "CUNY Graduate Center",
+      dates: "2024 — Present",
       notes: [
-        "Core CS fundamentals, web development, and software engineering basics.",
+        "Research-focused program combining software development, data analysis, and humanities-driven computation.",
       ],
     },
-    // Add more items here…
+    {
+      title: "B.S. (Honors) in Computer Science",
+      org: "Algoma University",
+      dates: "Completed",
+      notes: [
+        "Relevant coursework: Data Structures & Algorithms, Database Systems, Software Engineering, Web Development, Blockchain Fundamentals.",
+      ],
+    },
   ],
 
   contact: {
     blurb:
-      "Email is best. If you’re a recruiter, include the role title, salary band, and timeline.",
+      "Email is best. If you’re reaching out about a role, include the title, tech stack, and timeline.",
     notes: [
       "Open to front-end and full-stack roles.",
-      "Strong preference for teams that value code quality and mentoring.",
-      "Happy to do a short take-home if it reflects real work.",
+      "Strong in API + UI integration and performance-minded delivery.",
+      "Comfortable with web3/Algorand wallet flows in production-style apps.",
     ],
   },
 
   github: {
-    // Repo filtering: change these to fit your profile
     maxRepos: 12,
     excludeForks: true,
     excludeArchived: true,
-    excludePrivate: true, // public API only returns public, but keep it explicit
+    excludePrivate: true,
     pinTopicsAsTags: true,
+
+    // NEW: exclude certain repos from showing up
+    excludeNames: ["ecommerce-project"],
   },
 };
 
@@ -466,6 +520,17 @@ function renderStaticSections() {
     })
   );
 
+  if (DATA.person.phone) {
+    const tel = DATA.person.phone.replace(/[^\d+]/g, "");
+    contactActions.append(
+      el("a", {
+        class: "btn",
+        href: `tel:${tel}`,
+        text: `Call: ${DATA.person.phone}`,
+      })
+    );
+  }
+
   // Social/links
   DATA.person.links.forEach((l) => {
     contactActions.append(
@@ -729,11 +794,16 @@ async function fetchGithubRepos(username) {
 }
 
 function filterRepos(repos) {
+  const excluded = new Set(
+    (DATA.github.excludeNames || []).map((n) => n.toLowerCase())
+  );
+
   return repos
     .filter((r) => (DATA.github.excludeForks ? !r.fork : true))
     .filter((r) => (DATA.github.excludeArchived ? !r.archived : true))
     .filter((r) => (DATA.github.excludePrivate ? !r.private : true))
     .filter((r) => !r.disabled)
+    .filter((r) => !excluded.has(String(r.name || "").toLowerCase()))
     .slice(0, DATA.github.maxRepos);
 }
 
@@ -781,9 +851,7 @@ async function loadProjects() {
 
     ghProjects = filtered.map(githubRepoToProject);
     updateGithubStatus("GitHub repos loaded");
-    setGithubNote(
-      "Showing featured projects + your most recently updated public repos."
-    );
+    setGithubNote("Showing projects + most recently updated public repos.");
     renderProjects([...manual, ...ghProjects]);
   } catch (err) {
     // If rate-limited, keep cached if we have it; otherwise show manual only

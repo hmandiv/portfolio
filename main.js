@@ -442,22 +442,16 @@ function normalizeProject(p) {
   };
 }
 
-function buildInterviewText(p) {
-  const cs = p.caseStudy;
-  if (!cs?.interviewScript) return "";
+function populateInterviewSections(p) {
+  const s = p.caseStudy?.interviewScript;
+  if (!s) return;
 
-  const s = cs.interviewScript;
-  const parts = [
-    `Answer: Tell me about this project`,
-    `--------------------------------`,
-    s.tellMeAbout || "",
-    "",
-    s.tradeoffs ? `Tradeoffs:\n${s.tradeoffs}` : "",
-    "",
-    s.whatIdImprove ? `What I’d improve next:\n${s.whatIdImprove}` : "",
-  ].filter(Boolean);
+  $("#caseStudySummary").textContent =
+    "Short version: what this project is, why it exists, and what engineering decisions mattered.";
 
-  return parts.join("\n");
+  $("#caseStudyTellMe").textContent = s.tellMeAbout || "";
+  $("#caseStudyTradeoffs").textContent = s.tradeoffs || "";
+  $("#caseStudyImprove").textContent = s.whatIdImprove || "";
 }
 
 function openCaseStudyModal(project) {
@@ -470,7 +464,6 @@ function openCaseStudyModal(project) {
   $("#caseStudyDesc").textContent = p.description || "";
   $("#caseStudyProblem").textContent = p.caseStudy?.problem || "";
   $("#caseStudySolution").textContent = p.caseStudy?.solution || "";
-  $("#caseStudyScript").textContent = p.caseStudy?.script || "";
 
   const impact = $("#caseStudyImpact");
   impact.innerHTML = "";
@@ -478,8 +471,7 @@ function openCaseStudyModal(project) {
     impact.append(el("li", { text: i }))
   );
 
-  const interview = $("#caseStudyScript");
-  interview.textContent = buildInterviewText(p);
+  populateInterviewSections(p);
 
   const ctas = $("#caseStudyCtas");
   ctas.innerHTML = "";

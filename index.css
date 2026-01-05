@@ -1045,3 +1045,37 @@ pre {
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.28) transparent;
 }
+
+.dialog-summary {
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 70ch;
+}
+
+.dialog-details {
+    margin-top: 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.6rem 0.8rem;
+    background: color-mix(in srgb, var(--surface) 90%, transparent);
+}
+
+.dialog-details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text);
+    list-style: none;
+}
+
+.dialog-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.dialog-details[open] {
+    background: color-mix(in srgb, var(--surface) 96%, transparent);
+}
+
+.dialog-details p {
+    margin: 0.5rem 0 0;
+    line-height: 1.65;
+}

@@ -20,7 +20,7 @@ const DATA = {
     ],
     heroBadges: [
       "C# + SQL APIs",
-      "Angular + React UI",
+      "React UI",
       "Algorand integrations",
       "Performance-minded",
     ],

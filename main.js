@@ -3,8 +3,8 @@ document.documentElement.classList.remove("no-js");
 /* =========================================================
    0) DATA
    =========================================================
-   ✅ Add projects/experience/education here.
-   ✅ Featured projects show first; GitHub repos auto-load after.
+   Add projects/experience/education here.
+   Featured projects show first; GitHub repos auto-load after.
 */
 const DATA = {
   person: {
@@ -45,7 +45,7 @@ const DATA = {
   },
 
   skills: [
-    // ✅ Skills tuned for both React-heavy and Full-stack scans (ordering matters)
+    // Skills tuned for both React-heavy and Full-stack scans
     {
       group: "Front-End",
       items: [
@@ -93,7 +93,7 @@ const DATA = {
   ],
 
   featuredProjects: [
-    // ✅ MINI CASE STUDY #1
+    // MINI CASE STUDY #1
     {
       title: "Full-Stack Referral App",
       description:
@@ -128,7 +128,7 @@ const DATA = {
           "Provided secure, verifiable payments using Algorand atomic transactions",
         ],
         interviewScript: {
-          // ✅ “Tell me about a project” script
+          // “Tell me about a project” script
           tellMeAbout:
             "I built a full-stack referral platform that supports both email and crypto-wallet onboarding, a multi-level referral system, and verifiable on-chain payments. The key challenge was making the app feel fast and trustworthy while integrating multiple external APIs and blockchain verification. I designed a React UI, built a Node/Express API, used Firebase for auth + realtime updates, and verified payments using Algorand atomic transactions. For performance, I aggregated DeFi data using Promise.all to parallelize calls and reduce overall latency. The result was a production-style platform with real-time referral tracking, a portfolio dashboard, and secure payment verification.",
           tradeoffs:
@@ -139,7 +139,7 @@ const DATA = {
       },
     },
 
-    // ✅ MINI CASE STUDY #2
+    // MINI CASE STUDY #2
     {
       title: "Habit Tracker (Local-first TypeScript)",
       description:
@@ -253,8 +253,8 @@ const DATA = {
     excludePrivate: true,
     pinTopicsAsTags: true,
 
-    // ✅ Exclude repos you don’t want to show
-    excludeNames: ["ecommerce-project", "habit-tracker"], // add more names here
+    // Excluded repos
+    excludeNames: ["ecommerce-project", "habit-tracker"],
   },
 };
 
@@ -272,7 +272,6 @@ function el(tag, attrs = {}, children = []) {
     else if (k === "text") node.textContent = v;
     else if (k === "html") node.innerHTML = v;
     else if (k.startsWith("on") && typeof v === "function") {
-      // FIX: "onClick" -> "click" (lowercase)
       const evt = k.slice(2).toLowerCase();
       node.addEventListener(evt, v);
     } else {
@@ -362,7 +361,6 @@ function initSmoothScrollOffset() {
       const target = document.querySelector(href);
       if (!target) return;
 
-      // Skip link should behave normally
       if (a.classList.contains("skip-link")) return;
 
       e.preventDefault();
@@ -445,7 +443,7 @@ function normalizeProject(p) {
     tags: Array.isArray(p.tags) ? p.tags : [],
     ctas: Array.isArray(p.ctas) ? p.ctas : [],
     highlights: Array.isArray(p.highlights) ? p.highlights : [],
-    caseStudy: p.caseStudy || null, // ✅ THIS WAS THE COMMON “NOT SHOWING” BUG
+    caseStudy: p.caseStudy || null,
     source: p.source || "manual",
     meta: p.meta || {},
   };

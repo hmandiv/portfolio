@@ -1,7 +1,7 @@
 document.documentElement.classList.remove("no-js");
 
 /* =========================================================
-   0) DATA — EDIT THIS ONLY
+   0) DATA
    =========================================================
    ✅ Add projects/experience/education here.
    ✅ Featured projects show first; GitHub repos auto-load after.

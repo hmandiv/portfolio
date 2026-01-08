@@ -2,302 +2,286 @@
 <html lang="en" class="no-js">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HR Mandiv — Portfolio</title>
-    <meta name="description" content="HR Mandiv — Software Developer portfolio." />
-    <meta name="theme-color" content="#f7f8fb" />
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%230ea5e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial' font-size='26' font-weight='800' fill='white'%3EHR%3C/text%3E%3C/svg%3E" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
-    <link rel="stylesheet" href="./index.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HR Mandiv — Portfolio</title>
+  <meta name="description" content="HR Mandiv — Software Developer portfolio." />
+  <meta name="theme-color" content="#f7f8fb" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./favicon.svg" />
+
+  <link rel="stylesheet" href="./index.css" />
 </head>
 
 <body id="top">
-    <a class="skip-link" href="#content">Skip to content</a>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-    <header class="site-header" role="banner">
-        <div class="container header-inner">
-            <a class="brand" href="#top" aria-label="Go to top">
-                <span class="brand-dot" aria-hidden="true"></span>
-                <span id="brandName">HR Mandiv</span>
-            </a>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span id="brandName">HR Mandiv</span>
+      </a>
 
-            <nav class="site-nav" aria-label="Primary">
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="nav-toggle-bars" aria-hidden="true"></span>
-                </button>
+      <nav class="site-nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
 
-                <ul id="nav-links" class="nav-links">
-                    <li><a class="nav-link" href="#about">About</a></li>
-                    <li><a class="nav-link" href="#skills">Skills</a></li>
-                    <li><a class="nav-link" href="#projects">Projects</a></li>
-                    <li><a class="nav-link" href="#experience">Experience</a></li>
-                    <li><a class="nav-link" href="#education">Education</a></li>
-                    <li><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
+        <ul id="nav-links" class="nav-links">
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#experience">Experience</a></li>
+          <li><a class="nav-link" href="#education">Education</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
 
-                <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">
-                    <span class="icon" aria-hidden="true">☀️</span>
-                </button>
-            </nav>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">
+          <span class="icon" aria-hidden="true">☀️</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- HERO -->
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" id="heroEyebrow">Software Developer</p>
+          <h1 id="hero-title" class="hero-title">Building clean, fast, accessible web apps.</h1>
+          <p id="heroSubtitle" class="hero-subtitle">Software Developer with 3+ years of professional experience…</p>
+
+          <ul id="heroBadges" class="badge-row" aria-label="Highlights"></ul>
+
+          <div class="hero-cta">
+            <a id="githubBtn" class="btn primary" href="#" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn ghost" href="#projects">View Projects</a>
+            <button id="resumeBtn" class="btn" type="button">Download Resume (PDF)</button>
+          </div>
+
+          <dl class="meta-grid" aria-label="Quick facts">
+            <div class="meta-item">
+              <dt class="meta-k">Location</dt>
+              <dd class="meta-v" id="metaLocation">Ontario, Canada</dd>
+            </div>
+            <div class="meta-item">
+              <dt class="meta-k">Focus</dt>
+              <dd class="meta-v" id="metaFocus">Front-end + APIs + Web3 integrations</dd>
+            </div>
+            <div class="meta-item">
+              <dt class="meta-k">Strengths</dt>
+              <dd class="meta-v" id="metaStrengths">Clean UI • Reliable APIs • Performance</dd>
+            </div>
+          </dl>
         </div>
-    </header>
 
-    <main id="content" class="site-main" role="main">
-        <!-- HERO -->
-        <section class="hero section" aria-labelledby="hero-title">
-            <div class="container hero-grid">
-                <div class="hero-copy">
-                    <p class="eyebrow" id="heroEyebrow">Software Developer</p>
-                    <h1 id="hero-title" class="hero-title">Building clean, fast, accessible web apps.</h1>
-                    <p id="heroSubtitle" class="hero-subtitle">
-                        Software Developer with 3+ years of professional experience…
-                    </p>
+        <aside class="hero-card card" aria-label="Snapshot">
+          <h2 class="card-title">Snapshot</h2>
+          <p class="muted" id="snapshotText">
+            Professional full-stack experience (C# / SQL / Angular), plus modern React/Node projects and Algorand
+            integrations.
+          </p>
 
-                    <ul id="heroBadges" class="badge-row" aria-label="Highlights">
-                        <!-- filled by JS -->
-                    </ul>
-
-                    <div class="hero-cta">
-                        <a id="githubBtn" class="btn primary" href="#" target="_blank" rel="noreferrer">GitHub</a>
-                        <a class="btn ghost" href="#projects">View Projects</a>
-                        <button id="resumeBtn" class="btn" type="button">Download Resume (PDF)</button>
-                    </div>
-
-                    <dl class="meta-grid" aria-label="Quick facts">
-                        <div class="meta-item">
-                            <dt class="meta-k">Location</dt>
-                            <dd class="meta-v" id="metaLocation">Ontario, Canada</dd>
-                        </div>
-                        <div class="meta-item">
-                            <dt class="meta-k">Focus</dt>
-                            <dd class="meta-v" id="metaFocus">Front-end + APIs + Web3 integrations</dd>
-                        </div>
-                        <div class="meta-item">
-                            <dt class="meta-k">Strengths</dt>
-                            <dd class="meta-v" id="metaStrengths">Clean UI • Reliable APIs • Performance</dd>
-                        </div>
-                    </dl>
-                </div>
-
-                <aside class="hero-card card" aria-label="Snapshot">
-                    <h2 class="card-title">Snapshot</h2>
-                    <p class="muted" id="snapshotText">
-                        Professional full-stack experience (C# / SQL / Angular), plus modern React/Node projects and
-                        Algorand integrations.
-                    </p>
-
-                    <div class="stack">
-                        <div class="stack-row"><span class="stack-k">Phone</span> <span class="stack-v"
-                                id="metaPhone"></span></div>
-                        <div class="stack-row"><span class="stack-k">Email</span> <span class="stack-v"><a
-                                    id="metaEmail" href="#"></a></span></div>
-                        <div class="stack-row"><span class="stack-k">GitHub</span> <span class="stack-v"><a
-                                    id="metaGithub" href="#" target="_blank" rel="noreferrer"></a></span></div>
-                    </div>
-                </aside>
+          <div class="stack">
+            <div class="stack-row"><span class="stack-k">Phone</span> <span class="stack-v" id="metaPhone"></span></div>
+            <div class="stack-row">
+              <span class="stack-k">Email</span>
+              <span class="stack-v"><a id="metaEmail" href="#"></a></span>
             </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about" class="section" aria-labelledby="about-title">
-            <div class="container two-col">
-                <div>
-                    <div class="section-head">
-                        <h2 id="about-title">About</h2>
-                        <p class="section-subtitle" id="aboutSubtitle"></p>
-                    </div>
-                    <div id="aboutContent" class="prose">
-                        <!-- filled by JS -->
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="card-title">What I bring</h3>
-                    <ul id="aboutChecklist" class="bullets">
-                        <!-- filled by JS -->
-                    </ul>
-                </div>
+            <div class="stack-row">
+              <span class="stack-k">GitHub</span>
+              <span class="stack-v"><a id="metaGithub" href="#" target="_blank" rel="noreferrer"></a></span>
             </div>
-        </section>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-        <!-- SKILLS -->
-        <section id="skills" class="section" aria-labelledby="skills-title">
-            <div class="container">
-                <div class="section-head">
-                    <h2 id="skills-title">Skills</h2>
-                    <p class="section-subtitle">Tuned for React-heavy + full-stack roles.</p>
-                </div>
-
-                <div id="skillsGrid" class="skills-grid" role="list">
-                    <!-- filled by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="projects" class="section" aria-labelledby="projects-title">
-            <div class="container">
-                <div class="section-head">
-                    <h2 id="projects-title">Projects</h2>
-                    <p class="section-subtitle">Featured work + latest public GitHub repos.</p>
-                </div>
-
-                <div class="projects-toolbar" role="region" aria-label="Project filters">
-                    <label class="sr-only" for="projectSearch">Search projects</label>
-                    <input id="projectSearch" class="input" type="search" placeholder="Search projects…" />
-
-                    <label class="sr-only" for="projectTagFilter">Filter by tag</label>
-                    <select id="projectTagFilter" class="select">
-                        <option value="all">All</option>
-                    </select>
-
-                    <div class="github-pill" aria-live="polite">
-                        <span id="githubStatus">Loading GitHub repos…</span>
-                    </div>
-                </div>
-
-                <p id="githubNote" class="muted small" aria-live="polite"></p>
-
-                <div id="projectsGrid" class="cards-grid" role="list">
-                    <!-- filled by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE -->
-        <section id="experience" class="section" aria-labelledby="exp-title">
-            <div class="container">
-                <div class="section-head">
-                    <h2 id="exp-title">Experience</h2>
-                    <p class="section-subtitle">What I’ve built and shipped in real environments.</p>
-                </div>
-
-                <ol class="timeline" id="experienceList">
-                    <!-- filled by JS -->
-                </ol>
-            </div>
-        </section>
-
-        <!-- EDUCATION -->
-        <section id="education" class="section" aria-labelledby="edu-title">
-            <div class="container">
-                <div class="section-head">
-                    <h2 id="edu-title">Education</h2>
-                    <p class="section-subtitle">Foundations and ongoing learning.</p>
-                </div>
-
-                <div class="cards-grid" id="educationGrid" role="list">
-                    <!-- filled by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="section" aria-labelledby="contact-title">
-            <div class="container">
-                <div class="section-head">
-                    <h2 id="contact-title">Contact</h2>
-                    <p class="section-subtitle">Fastest way to reach me.</p>
-                </div>
-
-                <div class="contact-grid">
-                    <div class="card">
-                        <h3 class="card-title">Let’s talk</h3>
-                        <p class="muted" id="contactBlurb"></p>
-
-                        <div class="contact-actions" id="contactActions">
-                            <!-- filled by JS -->
-                        </div>
-
-                        <p class="muted small">
-                            <strong>Tip:</strong> The “Download Resume (PDF)” button opens your browser print dialog —
-                            choose “Save as PDF”.
-                        </p>
-                    </div>
-
-                    <div class="card">
-                        <h3 class="card-title">Notes</h3>
-                        <ul class="bullets" id="contactNotes">
-                            <!-- filled by JS -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hidden print container -->
-        <section id="resumePrint" class="resume-print" hidden aria-hidden="true"></section>
-    </main>
-
-    <footer class="site-footer" role="contentinfo">
-        <div class="container footer-inner">
-            <p class="muted">© <span id="year"></span> <span id="footerName">HR Mandiv</span>. All rights reserved.</p>
-            <a class="muted small" href="#top">Back to top ↑</a>
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container two-col">
+        <div>
+          <div class="section-head">
+            <h2 id="about-title">About</h2>
+            <p class="section-subtitle" id="aboutSubtitle"></p>
+          </div>
+          <div id="aboutContent" class="prose"></div>
         </div>
-    </footer>
 
-    <!-- Case Study Modal -->
-    <dialog id="caseStudyDialog" class="dialog">
-        <div class="dialog-shell">
-            <header class="dialog-head">
-                <div class="dialog-titles">
-                    <h2 id="caseStudyTitle" class="dialog-title">Case Study</h2>
-                    <p id="caseStudyDesc" class="dialog-subtitle"></p>
-                </div>
-
-                <button id="caseStudyClose" class="dialog-close" type="button" aria-label="Close case study">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </header>
-
-            <div class="dialog-body">
-                <section class="dialog-section">
-                    <h3>Problem</h3>
-                    <p id="caseStudyProblem"></p>
-                </section>
-
-                <section class="dialog-section">
-                    <h3>Solution</h3>
-                    <p id="caseStudySolution"></p>
-                </section>
-
-                <section class="dialog-section">
-                    <h3>Impact</h3>
-                    <ul id="caseStudyImpact" class="dialog-list"></ul>
-                </section>
-
-                <section class="dialog-section">
-                    <h3>Interview Answer</h3>
-
-                    <p id="caseStudySummary" class="dialog-summary"></p>
-
-                    <details class="dialog-details">
-                        <summary>How I explain it in an interview</summary>
-                        <p id="caseStudyTellMe"></p>
-                    </details>
-
-                    <details class="dialog-details">
-                        <summary>Tradeoffs I considered</summary>
-                        <p id="caseStudyTradeoffs"></p>
-                    </details>
-
-                    <details class="dialog-details">
-                        <summary>What I’d improve next</summary>
-                        <p id="caseStudyImprove"></p>
-                    </details>
-                </section>
-
-
-                <div id="caseStudyCtas" class="dialog-actions"></div>
-            </div>
+        <div class="card">
+          <h3 class="card-title">What I bring</h3>
+          <ul id="aboutChecklist" class="bullets"></ul>
         </div>
-    </dialog>
+      </div>
+    </section>
 
+    <!-- SKILLS -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="skills-title">Skills</h2>
+          <p class="section-subtitle">Tuned for React-heavy + full-stack roles.</p>
+        </div>
 
-    <script src="./main.js" defer></script>
+        <div id="skillsGrid" class="skills-grid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="projects-title">Projects</h2>
+          <p class="section-subtitle">Featured work + latest public GitHub repos.</p>
+        </div>
+
+        <div class="projects-toolbar" role="region" aria-label="Project filters">
+          <label class="sr-only" for="projectSearch">Search projects</label>
+          <input id="projectSearch" class="input" type="search" placeholder="Search projects…" />
+
+          <label class="sr-only" for="projectTagFilter">Filter by tag</label>
+          <select id="projectTagFilter" class="select">
+            <option value="all">All</option>
+          </select>
+
+          <div class="github-pill" aria-live="polite">
+            <span id="githubStatus">Loading GitHub repos…</span>
+          </div>
+        </div>
+
+        <p id="githubNote" class="muted small" aria-live="polite"></p>
+
+        <div id="projectsGrid" class="cards-grid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section" aria-labelledby="exp-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="exp-title">Experience</h2>
+          <p class="section-subtitle">What I’ve built and shipped in real environments.</p>
+        </div>
+
+        <ol class="timeline" id="experienceList"></ol>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section" aria-labelledby="edu-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="edu-title">Education</h2>
+          <p class="section-subtitle">Foundations and ongoing learning.</p>
+        </div>
+
+        <div class="cards-grid" id="educationGrid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="contact-title">Contact</h2>
+          <p class="section-subtitle">Fastest way to reach me.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3 class="card-title">Let’s talk</h3>
+            <p class="muted" id="contactBlurb"></p>
+
+            <div class="contact-actions" id="contactActions"></div>
+
+            <p class="muted small">
+              <strong>Tip:</strong> The “Download Resume (PDF)” button opens your browser print dialog — choose “Save as
+              PDF”.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Notes</h3>
+            <ul class="bullets" id="contactNotes"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hidden print container -->
+    <section id="resumePrint" class="resume-print" hidden aria-hidden="true"></section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="muted">© <span id="year"></span> <span id="footerName">HR Mandiv</span>. All rights reserved.</p>
+      <a class="muted small" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Case Study Modal -->
+  <dialog id="caseStudyDialog" class="dialog">
+    <div class="dialog-shell">
+      <header class="dialog-head">
+        <div class="dialog-titles">
+          <h2 id="caseStudyTitle" class="dialog-title">Case Study</h2>
+          <p id="caseStudyDesc" class="dialog-subtitle"></p>
+        </div>
+
+        <button id="caseStudyClose" class="dialog-close" type="button" aria-label="Close case study">
+          <span aria-hidden="true">×</span>
+        </button>
+      </header>
+
+      <div class="dialog-body">
+        <section class="dialog-section">
+          <h3>Problem</h3>
+          <p id="caseStudyProblem"></p>
+        </section>
+
+        <section class="dialog-section">
+          <h3>Solution</h3>
+          <p id="caseStudySolution"></p>
+        </section>
+
+        <section class="dialog-section">
+          <h3>Impact</h3>
+          <ul id="caseStudyImpact" class="dialog-list"></ul>
+        </section>
+
+        <section class="dialog-section">
+          <h3>Interview Answer</h3>
+
+          <p id="caseStudySummary" class="dialog-summary"></p>
+
+          <details class="dialog-details">
+            <summary>How I explain it in an interview</summary>
+            <p id="caseStudyTellMe"></p>
+          </details>
+
+          <details class="dialog-details">
+            <summary>Tradeoffs I considered</summary>
+            <p id="caseStudyTradeoffs"></p>
+          </details>
+
+          <details class="dialog-details">
+            <summary>What I’d improve next</summary>
+            <p id="caseStudyImprove"></p>
+          </details>
+        </section>
+
+        <div id="caseStudyCtas" class="dialog-actions"></div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- IMPORTANT: now using ES modules -->
+  <script type="module" src="./src/main.js"></script>
 </body>
 
 </html>

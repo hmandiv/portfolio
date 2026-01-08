@@ -1,0 +1,11 @@
+{
+  "name": "hrmandiv-portfolio",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Static portfolio site (vanilla JS + ES modules).",
+  "scripts": {
+    "serve": "npx serve .",
+    "format": "npx prettier . --write"
+  }
+}

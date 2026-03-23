@@ -9,9 +9,11 @@ function readGithubCache(user) {
   try {
     const raw = localStorage.getItem(githubCacheKey(user));
     if (!raw) return null;
+
     const parsed = JSON.parse(raw);
     if (!parsed?.ts || !Array.isArray(parsed?.data)) return null;
     if (Date.now() - parsed.ts > githubCacheTTLms) return null;
+
     return parsed.data;
   } catch {
     return null;
@@ -25,7 +27,7 @@ function writeGithubCache(user, data) {
       JSON.stringify({ ts: Date.now(), data }),
     );
   } catch {
-    // ignore
+    // ignore cache write failures
   }
 }
 
@@ -33,10 +35,13 @@ function githubRepoToProject(repo) {
   const topics = Array.isArray(repo.topics) ? repo.topics : [];
   const tags = [];
 
-  if (DATA.github.pinTopicsAsTags)
-    topics.slice(0, 6).forEach((t) => tags.push(t));
-  if (repo.language && !tags.includes(repo.language))
+  if (DATA.github?.pinTopicsAsTags) {
+    topics.slice(0, 6).forEach((topic) => tags.push(topic));
+  }
+
+  if (repo.language && !tags.includes(repo.language)) {
     tags.unshift(repo.language);
+  }
 
   return {
     title: repo.name,
@@ -65,8 +70,11 @@ async function fetchGithubRepos(username) {
   const url = `https://api.github.com/users/${encodeURIComponent(
     username,
   )}/repos?per_page=100&sort=updated`;
+
   const res = await fetch(url, {
-    headers: { Accept: "application/vnd.github+json" },
+    headers: {
+      Accept: "application/vnd.github+json",
+    },
   });
 
   if (res.status === 403) {
@@ -77,61 +85,102 @@ async function fetchGithubRepos(username) {
     });
   }
 
-  if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
+  if (!res.ok) {
+    throw new Error(`GitHub API error: ${res.status}`);
+  }
 
   const data = await res.json();
-  if (!Array.isArray(data)) throw new Error("Unexpected GitHub response");
+  if (!Array.isArray(data)) {
+    throw new Error("Unexpected GitHub response");
+  }
+
   return data;
 }
 
 function filterRepos(repos) {
   const excluded = new Set(
-    (DATA.github.excludeNames || []).map((n) => n.toLowerCase()),
+    (DATA.github?.excludeNames || []).map((name) => String(name).toLowerCase()),
   );
+
+  const maxRepos =
+    typeof DATA.github?.maxRepos === "number" ? DATA.github.maxRepos : 0;
+
   return repos
-    .filter((r) => (DATA.github.excludeForks ? !r.fork : true))
-    .filter((r) => (DATA.github.excludeArchived ? !r.archived : true))
-    .filter((r) => (DATA.github.excludePrivate ? !r.private : true))
-    .filter((r) => !r.disabled)
-    .filter((r) => !excluded.has(String(r.name || "").toLowerCase()))
-    .slice(0, DATA.github.maxRepos);
+    .filter((repo) => (DATA.github?.excludeForks ? !repo.fork : true))
+    .filter((repo) => (DATA.github?.excludeArchived ? !repo.archived : true))
+    .filter((repo) => (DATA.github?.excludePrivate ? !repo.private : true))
+    .filter((repo) => !repo.disabled)
+    .filter((repo) => !excluded.has(String(repo.name || "").toLowerCase()))
+    .slice(0, maxRepos);
 }
 
 function updateGithubStatus(text) {
-  $("#githubStatus") && ($("#githubStatus").textContent = text);
+  const el = $("#githubStatus");
+  if (el) el.textContent = text;
 }
+
 function setGithubNote(text) {
-  $("#githubNote") && ($("#githubNote").textContent = text);
+  const el = $("#githubNote");
+  if (el) el.textContent = text;
+}
+
+function getFeaturedProjects() {
+  return (DATA.featuredProjects || []).map((project) => ({
+    ...project,
+    source: "manual",
+  }));
+}
+
+function shouldShowRecentRepos() {
+  return Boolean(DATA.github?.showRecentRepos);
+}
+
+function renderFeaturedOnly() {
+  renderProjects(getFeaturedProjects());
+}
+
+function renderFeaturedPlusRepos(repos) {
+  const featured = getFeaturedProjects();
+  const repoProjects = repos.map(githubRepoToProject);
+  renderProjects([...featured, ...repoProjects]);
 }
 
 export async function loadProjects() {
   const username = DATA.person.githubUsername;
+  const showRecentRepos = shouldShowRecentRepos();
 
-  const featured = (DATA.featuredProjects || []).map((p) => ({
-    ...p,
-    source: "manual",
-  }));
+  if (!showRecentRepos) {
+    updateGithubStatus("Showing featured projects");
+    setGithubNote("Only curated featured projects are shown.");
+    renderFeaturedOnly();
+    return;
+  }
+
+  const featured = getFeaturedProjects();
 
   updateGithubStatus("Loading GitHub repos…");
   setGithubNote("");
 
-  // render cached fast
   const cached = readGithubCache(username);
   const cachedProjects = cached ? cached.map(githubRepoToProject) : [];
-  if (cachedProjects.length) updateGithubStatus("GitHub repos loaded (cached)");
 
-  renderProjects([...featured, ...cachedProjects]);
+  if (cachedProjects.length) {
+    updateGithubStatus("GitHub repos loaded (cached)");
+    setGithubNote("Showing featured projects + selected GitHub repos.");
+    renderProjects([...featured, ...cachedProjects]);
+  } else {
+    renderProjects(featured);
+  }
 
   try {
     const repos = await fetchGithubRepos(username);
     const filtered = filterRepos(repos);
+
     writeGithubCache(username, filtered);
 
     updateGithubStatus("GitHub repos loaded");
-    setGithubNote(
-      "Showing featured projects + most recently updated public repos.",
-    );
-    renderProjects([...featured, ...filtered.map(githubRepoToProject)]);
+    setGithubNote("Showing featured projects + selected GitHub repos.");
+    renderFeaturedPlusRepos(filtered);
   } catch (err) {
     const hasCached = cachedProjects.length > 0;
 
@@ -141,9 +190,11 @@ export async function loadProjects() {
           ? "GitHub rate-limited (using cached)"
           : "GitHub rate-limited",
       );
+
       const resetText = err.reset
         ? ` Rate limit resets at ${err.reset.toLocaleString()}.`
         : "";
+
       setGithubNote(
         hasCached
           ? `GitHub rate limit hit.${resetText} Showing cached repos.`
@@ -153,6 +204,7 @@ export async function loadProjects() {
       updateGithubStatus(
         hasCached ? "GitHub unavailable (using cached)" : "GitHub unavailable",
       );
+
       setGithubNote(
         hasCached
           ? "Could not refresh GitHub repos right now. Showing cached repos."

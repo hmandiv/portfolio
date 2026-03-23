@@ -1,94 +1,73 @@
 export const DATA = {
   person: {
     name: "HR Mandiv",
-    role: "Software Developer (Full-Stack)",
-    tagline: "Building clean, fast, accessible web apps.",
+    role: "Full-Stack Software Developer",
+    tagline: "Building clean, fast, accessible web applications.",
     subtitle:
-      "Software Developer with 3+ years of professional experience building and maintaining production APIs, front-end systems, and end-to-end features. Currently a research-based developer pursuing a Master’s in Digital Humanities.",
-    location: "Ontario, Canada",
-    focus: "Front-end + APIs + Web3 integrations",
+      "Full-stack software developer with 3 years of professional experience building web applications, APIs, and product features. Strong background in React, TypeScript/JavaScript, Node.js, C#, and SQL, with experience contributing to business-facing software and building independent product projects.",
+    location: "Hamilton, Ontario, Canada",
+    focus: "React, Node.js, APIs, and full-stack web applications",
     strengths: "Clean UI • Reliable APIs • Performance • Collaboration",
     githubUsername: "hmandiv",
     email: "mandivcei@gmail.com",
-    phone: "929-623-5476",
-    links: [{ label: "GitHub", href: "https://github.com/hmandiv" }],
+    phone: "705-542-6100",
+    links: [
+      { label: "GitHub", href: "https://github.com/hmandiv" },
+      { label: "Portfolio", href: "https://hrmandiv.vercel.app" },
+    ],
     heroBadges: [
-      "C# + SQL APIs",
-      "React UI",
-      "Algorand integrations",
+      "React + TypeScript",
+      "Node.js + APIs",
+      "C# professional experience",
       "Performance-minded",
     ],
   },
 
   about: {
     subtitle:
-      "I build robust APIs and polished front-end experiences — and I’m focused on roles where quality and shipping matter.",
+      "I build robust APIs and polished front-end experiences, and I’m focused on full-stack and React-heavy roles where quality and shipping matter.",
     paragraphs: [
-      "I’m a detail-oriented software developer with 3+ years of professional full-stack experience. I’ve built and maintained APIs/microservices in C# with SQL Server, and delivered responsive Angular front-ends that support real business workflows.",
-      "I’m also hands-on with modern JavaScript/TypeScript stacks (React + Node/Express) and have built projects integrating Algorand payments, wallet flows (Pera Wallet), and atomic transaction patterns.",
-      "My strengths are clean implementation, strong collaboration, and improving system performance — from query optimization to structured, maintainable UI components.",
+      "I’m a software developer with 3 years of professional experience building and maintaining production APIs, microservices, and front-end applications. At LBMX, I worked with C#, SQL Server, Angular, and REST APIs to support core business workflows.",
+      "I also build with modern JavaScript and TypeScript stacks, especially React and Node.js/Express. My independent projects include secure onboarding flows, referral systems, dashboard interfaces, and blockchain-integrated payment verification.",
+      "My strengths are clean implementation, API and UI integration, collaboration, and performance-minded development.",
     ],
     checklist: [
-      "Robust REST APIs + microservices (C#, Node/Express)",
-      "Modern front-end UI (React) with strong UX",
-      "Performance improvements (SQL optimization, parallel API calls)",
-      "Blockchain integrations (Algorand, wallet flows, atomic transactions)",
+      "Full-stack web development with React, Node.js, and REST APIs",
+      "Professional backend experience with C# and SQL Server",
+      "Responsive UI development and frontend/backend integration",
+      "Performance improvements through query optimization and efficient API handling",
     ],
   },
 
   skills: [
     {
-      group: "Front-End",
-      items: [
-        "React",
-        "TypeScript",
-        "JavaScript",
-        "Component architecture",
-        "Accessibility",
-        "Performance",
-      ],
+      group: "Frontend",
+      items: ["React", "TypeScript", "JavaScript"],
     },
     {
-      group: "Full-Stack",
-      items: [
-        "Node.js",
-        "Express",
-        "C#",
-        "REST APIs",
-        "Microservices",
-        "Auth flows",
-      ],
-    },
-    { group: "Data", items: ["SQL Server", "SQL", "Firebase (NoSQL)"] },
-    {
-      group: "Blockchain",
-      items: ["Algorand", "Atomic transactions", "Pera Wallet integration"],
+      group: "Backend",
+      items: ["Node.js", "Express", "REST APIs"],
     },
     {
-      group: "Engineering Practices",
-      items: [
-        "Domain modeling (DDD-lite): entities, commands, selectors",
-        "Functional core / imperative shell (pure logic first)",
-        "Immutability + reducer-style state transitions",
-        "Derived state + single source of truth",
-        "Testing pyramid (unit/integration/E2E)",
-        "User-centric + accessibility-first testing",
-        "Performance patterns (parallel I/O with Promise.all)",
-        "Code review and maintainable architecture",
-      ],
+      group: "Database",
+      items: ["SQL", "Firebase"],
+    },
+    {
+      group: "Additional",
+      items: ["C#", "SQL Server", "Algorand"],
     },
     {
       group: "Tools",
-      items: ["Git", "Docker", "Postman", "VS Code", "Visual Studio"],
+      items: ["Git", "Postman", "Docker"],
     },
   ],
 
   featuredProjects: [
     {
-      title: "Full-Stack Referral App",
+      title: "Full-Stack Referral Platform",
       description:
-        "Secure email/wallet onboarding, 5-level referrals, portfolio dashboard, DeFi API aggregation, and on-chain payment verification (Algorand).",
-      tags: ["React", "Express", "Firebase", "Algorand", "Performance"],
+        "Built a full-stack referral platform with secure onboarding, multi-level referral tracking, portfolio dashboards, DeFi API aggregation, and blockchain-based payment verification.",
+      tags: ["React", "Node.js", "Express", "Firebase", "Algorand"],
       ctas: [
         {
           label: "Live",
@@ -96,43 +75,43 @@ export const DATA = {
           kind: "primary",
         },
         {
-          label: "Code front end",
+          label: "Frontend Code",
           href: "https://github.com/hmandiv/aaa",
           kind: "ghost",
         },
         {
-          label: "Code back end",
+          label: "Backend Code",
           href: "https://github.com/hmandiv/aaa-api",
           kind: "ghost",
         },
       ],
       caseStudy: {
         problem:
-          "Users needed a secure way to onboard via email or crypto wallet, track multi-level referrals, and verify on-chain payments—while also viewing portfolio balances and DeFi token data in real time. Existing solutions were fragmented or unreliable.",
+          "Users needed a secure way to onboard via email or crypto wallet, track referrals across multiple levels, and verify on-chain payments while also viewing portfolio balances and DeFi token data in real time.",
         solution:
-          "Built a full-stack platform using React for UI and Node.js/Express for backend services. Firebase handled authentication + real-time data. Algorand atomic transactions verified payments. Aggregated external DeFi APIs using Promise.all for parallel requests to reduce latency.",
+          "Built a full-stack platform using React for the UI and Node.js/Express for backend services. Firebase handled authentication and realtime updates, while Algorand atomic transactions were used to verify payments. External DeFi APIs were aggregated using Promise.all to reduce latency.",
         impact: [
-          "Enabled a 5-level referral system with real-time updates",
-          "Delivered a portfolio dashboard (balances, allocations, totals)",
-          "Improved API responsiveness via parallelized external requests",
-          "Provided secure, verifiable payments using Algorand atomic transactions",
+          "Implemented a 5-level referral system with real-time updates",
+          "Delivered a portfolio dashboard with balances, allocations, and token data",
+          "Improved responsiveness through parallelized external API requests",
+          "Provided secure, verifiable blockchain-based payment validation",
         ],
         interviewScript: {
           tellMeAbout:
-            "I built a full-stack referral platform that supports both email and crypto-wallet onboarding, a multi-level referral system, and verifiable on-chain payments. The key challenge was making the app feel fast and trustworthy while integrating multiple external APIs and blockchain verification. I designed a React UI, built a Node/Express API, used Firebase for auth + realtime updates, and verified payments using Algorand atomic transactions. For performance, I aggregated DeFi data using Promise.all to parallelize calls and reduce overall latency. The result was a production-style platform with real-time referral tracking, a portfolio dashboard, and secure payment verification.",
+            "I built a full-stack referral platform that supports both email and crypto-wallet onboarding, a multi-level referral system, and verifiable on-chain payments. The challenge was making the experience feel trustworthy and responsive while integrating blockchain verification and multiple external APIs. I built the React UI, Node/Express backend, used Firebase for auth and realtime updates, and used Algorand atomic transactions for payment verification. I also improved performance by aggregating DeFi data with Promise.all.",
           tradeoffs:
-            "Main tradeoff: real-time UX vs complexity. Firebase simplified realtime updates, while the backend enforced verification + integrity for wallet and payment flows.",
+            "The main tradeoff was balancing realtime UX with complexity. Firebase simplified realtime updates, while the backend handled verification and data integrity for wallet and payment flows.",
           whatIdImprove:
-            "Add stronger observability (structured logs + metrics), broaden test coverage, and implement server-side caching for third-party API data.",
+            "I would improve observability with better logging and metrics, expand automated test coverage, and add caching for third-party API responses.",
         },
       },
     },
 
     {
-      title: "Habit Tracker (Local-first TypeScript)",
+      title: "Habit Tracker (Local-First TypeScript)",
       description:
-        "Fast, offline-first habit tracker with correct streak logic, clean domain model, and testable pure functions.",
-      tags: ["TypeScript", "Architecture", "Local Storage", "Testing-friendly"],
+        "Fast, offline-first habit tracker with clean domain modeling, correct streak logic, and testable pure functions.",
+      tags: ["TypeScript", "Architecture", "Local Storage", "Testing-Friendly"],
       ctas: [
         {
           label: "Code",
@@ -142,22 +121,22 @@ export const DATA = {
       ],
       caseStudy: {
         problem:
-          "Many habit trackers are slow, over-engineered, or rely on unnecessary backend services for simple daily tracking. I wanted instant UX and correct streak logic without network dependency.",
+          "Many habit trackers are slow, overbuilt, or depend on unnecessary backend services for simple daily tracking. I wanted instant UX and reliable streak logic without network dependency.",
         solution:
-          "Built a local-first habit tracker using TypeScript with a domain model separating habits, check-ins, and derived streak calculations. Implemented core behavior as pure functions so logic is predictable, testable, and easy to extend. Persisted state locally for instant load.",
+          "Built a local-first habit tracker in TypeScript with a domain model separating habits, check-ins, and derived streak calculations. Core behavior was implemented as predictable pure functions, and all state was persisted locally for instant load and offline use.",
         impact: [
-          "Instant load times with no backend dependency",
-          "Reliable streak calculations using deterministic logic",
-          "Codebase designed for testing + easy future extension",
-          "Strong separation of concerns (domain model vs UI)",
+          "Delivered instant load times with no backend dependency",
+          "Implemented deterministic streak calculations",
+          "Kept the codebase easy to test and extend",
+          "Separated domain logic cleanly from UI concerns",
         ],
         interviewScript: {
           tellMeAbout:
-            "I built a local-first habit tracker focused on speed and correctness. The main problem I saw in many habit apps is unnecessary backend complexity and buggy streak logic. I designed a domain model that separates habits from check-ins and computes streaks through deterministic pure functions. That makes the logic easy to test and prevents UI state from becoming the source of truth. Because everything persists locally, the app loads instantly and works offline. It’s a small project, but it demonstrates clean architecture, predictable behavior, and engineering maturity beyond just UI work.",
+            "I built a local-first habit tracker focused on speed and correctness. The main problem I saw in many habit apps is buggy streak logic and unnecessary backend complexity. I separated habits from check-ins and computed streaks through deterministic pure functions, which made the logic easy to test and kept UI state from becoming the source of truth. Because everything persists locally, the app is fast and works offline.",
           tradeoffs:
-            "Tradeoff: local-first simplicity vs multi-device sync. I chose local-first for speed and reliability; sync could be added later without changing core logic.",
+            "The key tradeoff was choosing local-first simplicity instead of multi-device sync. I chose speed and reliability first, with sync left as a future enhancement.",
           whatIdImprove:
-            "Add optional export/import or cloud sync, and strengthen automated test coverage for edge-case date/streak scenarios.",
+            "I’d add export/import or optional cloud sync, and strengthen automated tests around edge-case streak scenarios.",
         },
       },
     },
@@ -165,22 +144,18 @@ export const DATA = {
 
   experience: [
     {
-      role: "Research-Based Developer (Graduate Studies)",
-      company: "CUNY Graduate Center",
-      dates: "2024 — Present",
-      location: "New York, USA",
+      role: "Independent Developer",
+      company: "Full-Stack Projects",
+      dates: "Oct 2023 — Present",
+      location: "Canada",
       bullets: [
-        "Developing research-driven software projects as part of a Master’s program in Digital Humanities.",
-        "Applying production-grade software engineering practices (domain modeling, separation of concerns, testable logic) to data-driven research and interactive web tools.",
-        "Combining front-end development, data modeling, and computational methods for humanities-focused research questions.",
+        "Designed and developed full-stack web applications using React, Node.js, and Firebase",
+        "Built a referral platform with secure onboarding, multi-level referral tracking, and real-time updates",
+        "Integrated blockchain-based payment verification using Algorand atomic transactions",
+        "Aggregated external APIs and improved performance using parallel request patterns",
+        "Focused on production-style application development and strengthening frontend, backend, and system design skills",
       ],
-      tech: [
-        "JavaScript",
-        "TypeScript",
-        "Web Development",
-        "Data Modeling",
-        "Research Computing",
-      ],
+      tech: ["React", "Node.js", "Express", "Firebase", "Algorand"],
     },
     {
       role: "Software Developer",
@@ -188,58 +163,50 @@ export const DATA = {
       dates: "Jan 2020 — Oct 2023",
       location: "Ontario, Canada",
       bullets: [
-        "Designed and implemented production APIs and microservices using C# and SQL Server supporting core business workflows.",
-        "Built modern, responsive Angular interfaces to streamline internal and customer-facing tools.",
-        "Integrated REST APIs with front-end components ensuring reliable data flow and consistent behavior.",
-        "Optimized SQL queries and stored procedures to improve retrieval speed and reduce response times.",
-        "Collaborated cross-functionally (product, QA, devs) and participated in code reviews to uphold standards.",
+        "Designed and implemented backend APIs and microservices using C# and SQL Server to support core business workflows",
+        "Built responsive Angular applications for internal and customer-facing tools",
+        "Integrated frontend and backend systems through REST APIs ensuring reliable data flow",
+        "Optimized SQL queries and stored procedures to improve performance and reduce response times",
+        "Collaborated with product managers, QA, and developers to deliver features and maintain code quality",
       ],
-      tech: [
-        "C#",
-        "SQL Server",
-        "Angular",
-        "REST APIs",
-        "Microservices",
-        "Git",
-      ],
+      tech: ["C#", "SQL Server", "Angular", "REST APIs", "Microservices"],
     },
   ],
 
   education: [
     {
-      title: "Master’s in Digital Humanities (Research-Based)",
-      org: "CUNY Graduate Center",
-      dates: "In progress",
-      notes: [
-        "Research-focused program combining software development, data analysis, and humanities-driven computation.",
-      ],
-    },
-    {
-      title: "B.S. (Honors) in Computer Science",
+      title: "Bachelor’s Degree in Computer Science",
       org: "Algoma University",
-      dates: "Completed",
-      notes: [
-        "Coursework: DSA, Databases, Software Engineering, Web Dev, Blockchain Fundamentals.",
-      ],
+      dates: "Completed, Jan 2015 -  August 2019",
+      notes: [],
     },
   ],
 
   contact: {
     blurb:
-      "Email is best. If you’re reaching out about a role, include the title, stack, and timeline.",
+      "Email is the best way to reach me. If you’re reaching out about a role, include the title, stack, and timeline.",
     notes: [
-      "Open to React-heavy and full-stack roles.",
-      "Strong in API + UI integration and performance-minded delivery.",
-      "Comfortable with web3/Algorand wallet flows in production-style apps.",
+      "Open to full-stack and React-focused roles.",
+      "Strong in API and UI integration.",
+      "Comfortable building production-style web applications.",
     ],
   },
 
   github: {
-    maxRepos: 12,
+    maxRepos: 6,
     excludeForks: true,
     excludeArchived: true,
     excludePrivate: true,
     pinTopicsAsTags: true,
-    excludeNames: ["ecommerce-project", "habit-tracker"],
+    excludeNames: [
+      "ecommerce-project",
+      "habit-tracker",
+      "aaa",
+      "aaa-api",
+      "lease",
+      "emarketing",
+      "portfolio",
+      "chatbot-project",
+    ],
   },
 };

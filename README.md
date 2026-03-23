@@ -18,7 +18,7 @@ Includes a GitHub repo feed, featured projects with case study modals, theme tog
 - HTML + CSS
 - Vanilla JavaScript (ES Modules)
 - GitHub REST API (public repos)
-- Deployed on Vercel
+- Deployed on Vercel site
 
 ## Project Structure
 

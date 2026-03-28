@@ -2,12 +2,12 @@ export const DATA = {
   person: {
     name: "HR Mandiv",
     role: "Full-Stack Software Developer",
-    tagline: "Building clean, fast, accessible web applications.",
+    tagline: "Building clean, reliable, production-ready systems.",
     subtitle:
-      "Full-stack software developer with 3 years of professional experience building web applications, APIs, and product features. Strong background in React, TypeScript/JavaScript, Node.js, C#, and SQL, with experience contributing to business-facing software and building independent product projects.",
+      "Software developer with 3+ years of experience building APIs, microservices, and frontend applications. Strong in React, Node.js, C#, and SQL, with a focus on delivering real-world, production-quality systems.",
     location: "Hamilton, Ontario, Canada",
-    focus: "React, Node.js, APIs, and full-stack web applications",
-    strengths: "Clean UI • Reliable APIs • Performance • Collaboration",
+    focus: "Full-stack development, APIs, and production systems",
+    strengths: "Clean Code • Reliable Systems • Performance • System Design",
     githubUsername: "hmandiv",
     email: "mandivcei@gmail.com",
     phone: "705-542-6100",
@@ -18,43 +18,43 @@ export const DATA = {
     heroBadges: [
       "React + TypeScript",
       "Node.js + APIs",
-      "C# professional experience",
-      "Performance-minded",
+      "C# / .NET",
+      "Production Systems",
     ],
   },
 
   about: {
     subtitle:
-      "I build robust APIs and polished front-end experiences, and I’m focused on full-stack and React-heavy roles where quality and shipping matter.",
+      "I build full-stack systems end-to-end with a focus on reliability, performance, and real-world usability.",
     paragraphs: [
-      "I’m a software developer with 3 years of professional experience building and maintaining production APIs, microservices, and front-end applications. At LBMX, I worked with C#, SQL Server, Angular, and REST APIs to support core business workflows.",
-      "I also build with modern JavaScript and TypeScript stacks, especially React and Node.js/Express. My independent projects include secure onboarding flows, referral systems, dashboard interfaces, and blockchain-integrated payment verification.",
-      "My strengths are clean implementation, API and UI integration, collaboration, and performance-minded development.",
+      "I’m a software developer with 3+ years of professional experience building and maintaining production APIs, microservices, and frontend applications. At LBMX, I worked with C#, SQL Server, Angular, and REST APIs to support core business workflows.",
+      "I also build modern full-stack applications using React, Node.js, and Firebase. My projects include referral systems, dashboards, job tracking platforms, and blockchain-integrated payment verification systems.",
+      "I focus on writing clean, maintainable code and building systems that perform well under real-world conditions.",
     ],
     checklist: [
-      "Full-stack web development with React, Node.js, and REST APIs",
-      "Professional backend experience with C# and SQL Server",
-      "Responsive UI development and frontend/backend integration",
-      "Performance improvements through query optimization and efficient API handling",
+      "Full-stack development with React, Node.js, and REST APIs",
+      "Backend systems with C#, SQL Server, and microservices",
+      "Frontend/backend integration with reliable data flow",
+      "Performance optimization and scalable system design",
     ],
   },
 
   skills: [
     {
       group: "Frontend",
-      items: ["React", "TypeScript", "JavaScript"],
+      items: ["React", "TypeScript", "JavaScript", "HTML", "CSS"],
     },
     {
       group: "Backend",
-      items: ["Node.js", "Express", "REST APIs"],
+      items: ["Node.js", "Express", "REST APIs", "C# / .NET"],
     },
     {
       group: "Database",
-      items: ["SQL", "Firebase"],
+      items: ["SQL Server", "SQL", "Firebase"],
     },
     {
-      group: "Additional",
-      items: ["C#", "SQL Server", "Algorand"],
+      group: "Blockchain",
+      items: ["Algorand", "Wallet Integration", "Transactions"],
     },
     {
       group: "Tools",
@@ -64,9 +64,9 @@ export const DATA = {
 
   featuredProjects: [
     {
-      title: "Full-Stack Referral Platform",
+      title: "Referral Platform (Full-Stack)",
       description:
-        "Built a full-stack referral platform with secure onboarding, multi-level referral tracking, portfolio dashboards, DeFi API aggregation, and blockchain-based payment verification.",
+        "Multi-level referral platform with secure onboarding, real-time tracking, and blockchain-based payment verification.",
       tags: ["React", "Node.js", "Express", "Firebase", "Algorand"],
       ctas: [
         {
@@ -77,23 +77,15 @@ export const DATA = {
       ],
       caseStudy: {
         problem:
-          "Users needed a secure way to onboard via email or crypto wallet, track referrals across multiple levels, and verify on-chain payments while also viewing portfolio balances and DeFi token data in real time.",
+          "Users needed a system to securely onboard, track referrals across multiple levels, and verify blockchain-based payments while maintaining real-time updates.",
         solution:
-          "Built a full-stack platform using React for the UI and Node.js/Express for backend services. Firebase handled authentication and realtime updates, while Algorand atomic transactions were used to verify payments. External DeFi APIs were aggregated using Promise.all to reduce latency.",
+          "Built a full-stack system using React, Node.js, and Firebase. Integrated Algorand atomic transactions for payment verification and used parallel API aggregation to improve performance.",
         impact: [
-          "Implemented a 5-level referral system with real-time updates",
-          "Delivered a portfolio dashboard with balances, allocations, and token data",
-          "Improved responsiveness through parallelized external API requests",
-          "Provided secure, verifiable blockchain-based payment validation",
+          "Implemented multi-level referral tracking with real-time updates",
+          "Enabled secure onboarding with wallet and email support",
+          "Improved performance through parallel API handling",
+          "Delivered verifiable blockchain-based payment validation",
         ],
-        interviewScript: {
-          tellMeAbout:
-            "I built a full-stack referral platform that supports both email and crypto-wallet onboarding, a multi-level referral system, and verifiable on-chain payments. The challenge was making the experience feel trustworthy and responsive while integrating blockchain verification and multiple external APIs. I built the React UI, Node/Express backend, used Firebase for auth and realtime updates, and used Algorand atomic transactions for payment verification. I also improved performance by aggregating DeFi data with Promise.all.",
-          tradeoffs:
-            "The main tradeoff was balancing realtime UX with complexity. Firebase simplified realtime updates, while the backend handled verification and data integrity for wallet and payment flows.",
-          whatIdImprove:
-            "I would improve observability with better logging and metrics, expand automated test coverage, and add caching for third-party API responses.",
-        },
       },
     },
 
@@ -137,13 +129,14 @@ export const DATA = {
       role: "Independent Developer",
       company: "Full-Stack Projects",
       dates: "Oct 2023 — Present",
-      location: "Canada",
+      location: "Hamilton, Ontario",
       bullets: [
-        "Designed and developed full-stack web applications using React, Node.js, and Firebase",
-        "Built a referral platform with secure onboarding, multi-level referral tracking, and real-time updates",
-        "Integrated blockchain-based payment verification using Algorand atomic transactions",
-        "Aggregated external APIs and improved performance using parallel request patterns",
-        "Focused on production-style application development and strengthening frontend, backend, and system design skills",
+        "Built production-style full-stack applications simulating real-world systems including authentication, persistence, and API integration",
+        "Designed and developed applications using React, Node.js, and Firebase",
+        "Developed a referral platform with multi-level tracking and real-time updates",
+        "Integrated blockchain-based payment verification using Algorand",
+        "Improved performance using parallel API request handling (Promise.all)",
+        "Designed systems across frontend, backend, and data layers with scalability in mind",
       ],
       tech: ["React", "Node.js", "Express", "Firebase", "Algorand"],
     },
@@ -153,11 +146,11 @@ export const DATA = {
       dates: "Jan 2020 — Oct 2023",
       location: "Ontario, Canada",
       bullets: [
-        "Designed and implemented backend APIs and microservices using C# and SQL Server to support core business workflows",
-        "Built responsive Angular applications for internal and customer-facing tools",
-        "Integrated frontend and backend systems through REST APIs ensuring reliable data flow",
-        "Optimized SQL queries and stored procedures to improve performance and reduce response times",
-        "Collaborated with product managers, QA, and developers to deliver features and maintain code quality",
+        "Designed and implemented backend APIs and microservices using C# and SQL Server",
+        "Built responsive Angular applications for internal and customer tools",
+        "Integrated frontend and backend systems via REST APIs",
+        "Optimized SQL queries and stored procedures to improve performance",
+        "Collaborated with cross-functional teams to deliver reliable features",
       ],
       tech: ["C#", "SQL Server", "Angular", "REST APIs", "Microservices"],
     },
@@ -165,20 +158,22 @@ export const DATA = {
 
   education: [
     {
-      title: "Bachelor’s Degree in Computer Science",
+      title: "Bachelor of Computer Science",
       org: "Algoma University",
-      dates: "Completed, Jan 2015 -  August 2019",
-      notes: [],
+      dates: "2015 — Aug 2019",
+      notes: [
+        "Studied algorithms, data structures, software engineering, and systems design",
+      ],
     },
   ],
 
   contact: {
     blurb:
-      "Email is the best way to reach me. If you’re reaching out about a role, include the title, stack, and timeline.",
+      "Best way to reach me is by email. For opportunities, include role, tech stack, and timeline.",
     notes: [
-      "Open to full-stack and React-focused roles.",
-      "Strong in API and UI integration.",
-      "Comfortable building production-style web applications.",
+      "Open to full-stack and React-focused roles",
+      "Strong in API and UI integration",
+      "Focused on building production-ready systems",
     ],
   },
 

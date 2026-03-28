@@ -74,16 +74,6 @@ export const DATA = {
           href: "https://aaa-app-prod.vercel.app",
           kind: "primary",
         },
-        {
-          label: "Frontend Code",
-          href: "https://github.com/hmandiv/aaa",
-          kind: "ghost",
-        },
-        {
-          label: "Backend Code",
-          href: "https://github.com/hmandiv/aaa-api",
-          kind: "ghost",
-        },
       ],
       caseStudy: {
         problem:
